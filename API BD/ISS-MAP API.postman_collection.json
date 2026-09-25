@@ -1,0 +1,96 @@
+{
+  "info": {
+    "_postman_id": "5d4c66ea-189c-476c-8105-44602b9ddd00",
+    "name": "ISS-MAP API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "54272591"
+  },
+  "item": [
+    {
+      "name": "GET Categories",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5261/api/map/categories",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5261",
+          "path": [
+            "api",
+            "map",
+            "categories"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GET Puntos de Interes",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "GET Puntos de Interes por ID",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "GET Iconos",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "GET Coordenadas",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "HOST",
+      "value": ""
+    }
+  ]
+}
