@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="API BD/API BD.csproj" />
+  <Project Path="APIBDCORE/APIBDCORE.fsproj" />
+</Solution>
