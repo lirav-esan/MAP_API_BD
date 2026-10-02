@@ -1,9 +1,10 @@
 {
   "info": {
-    "_postman_id": "5d4c66ea-189c-476c-8105-44602b9ddd00",
+    "_postman_id": "6e948de7-cb85-46fc-82da-4f8662ced669",
     "name": "ISS-MAP API",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-    "_exporter_id": "54272591"
+    "_exporter_id": "54447512",
+    "_collection_link": "https://go.postman.co/collection/54447512-6e948de7-cb85-46fc-82da-4f8662ced669?source=collection_link"
   },
   "item": [
     {
@@ -34,7 +35,10 @@
       "name": "GET Puntos de Interes",
       "request": {
         "method": "GET",
-        "header": []
+        "header": [],
+        "url": {
+          "raw": ""
+        }
       },
       "response": []
     },
@@ -42,7 +46,10 @@
       "name": "GET Puntos de Interes por ID",
       "request": {
         "method": "GET",
-        "header": []
+        "header": [],
+        "url": {
+          "raw": ""
+        }
       },
       "response": []
     },
@@ -50,7 +57,10 @@
       "name": "GET Iconos",
       "request": {
         "method": "GET",
-        "header": []
+        "header": [],
+        "url": {
+          "raw": ""
+        }
       },
       "response": []
     },
@@ -58,7 +68,106 @@
       "name": "GET Coordenadas",
       "request": {
         "method": "GET",
-        "header": []
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "POST google auth",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"idToken\": \"eyJhbGciOiJSUzI1NiIsImtpZCI6ImYxMGY4NzQwNWE5NzljMWRmMzZkZjI2NjA2NzM0ZjMzY2Q4NWMyNzEiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiIxMzIwMjMzMTYyNzMtMnFiaTMzZGZqNGRvNGh1MDNwbWU2b2Q5bnRlZW1kdGcuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiIxMzIwMjMzMTYyNzMtMnFiaTMzZGZqNGRvNGh1MDNwbWU2b2Q5bnRlZW1kdGcuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMTUzMzQ4OTcxMzYwMTg0ODQ5MTYiLCJlbWFpbCI6Im5pb3ZlbGJ2QGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJhdF9oYXNoIjoibUlZU1czamEtc3ZDdE5CVXB4R0c5dyIsIm5hbWUiOiJOaW92ZSBMw7NwZXoiLCJwaWN0dXJlIjoiaHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EvQUNnOG9jS3RacGtYVWktU292MzQ2czFYN1prS1VqWUtqMGxpeVd0b0Yyd09jZVJKOFlBck1Da0s9czk2LWMiLCJnaXZlbl9uYW1lIjoiTmlvdmUiLCJmYW1pbHlfbmFtZSI6IkzDs3BleiIsImlhdCI6MTc5MDkwODc4NSwiZXhwIjoxNzkwOTEyMzg1fQ.Glx8kwgnbceVK-rUYAz3fP6lLI76rLMNUkpH8cOh8XfDK3zWotZEJsoHVJfQAkUsM1FOS9BEZvRAuUqKMYzqLzfy5EXKBoyaAbi2vM7n4rTrvtyEvFfr11HsmDx4quVDpTVtFujYaNHhy5MNT_80h8HjMtKckTX8S_RPjDUjFxBYJhDP8sA2c026Nx-hZo6udR1tc7SkHV2trcB5-PBW7Us3CRmUfef9SGJz9gqyENcB-z_75XZDhRe7dDgGRaIj9oOKs16dT_GFir9UxdCHkWchSv-b70cr4yCg_8RAr7xVM14Blw_o0IEf6e4TcizSSvsOXegYns77rfcQ6ct9NQ\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5261/api/auth/google",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5261",
+          "path": [
+            "api",
+            "auth",
+            "google"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "POST registro",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"username\": \"usuarioPrueba\",\r\n  \"email\": \"prueba@example.com\",\r\n  \"password\": \"Password123!\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5261/api/auth/register",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5261",
+          "path": [
+            "api",
+            "auth",
+            "register"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "POST login",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"email\": \"prueba@example.com\",\r\n  \"password\": \"Password123!\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5261/api/auth/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5261",
+          "path": [
+            "api",
+            "auth",
+            "login"
+          ]
+        }
       },
       "response": []
     }
