@@ -37,7 +37,7 @@ CREATE TABLE Usuario (
 	id INT IDENTITY(1,1) PRIMARY KEY,
 	username VARCHAR(100) NOT NULL,
 	email VARCHAR(100) UNIQUE NOT NULL,
-    pass_hash VARCHAR(255) NOT NULL,
+    pass_hash VARCHAR(255),
 	fecha_registro DATETIME2 DEFAULT GETDATE()
 );
 
