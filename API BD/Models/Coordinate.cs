@@ -1,4 +1,4 @@
 namespace API_BD.Models
 {
-    public record Coordinate(double X, double Y);
+    public record Coordinate(decimal X, decimal Y);
 }

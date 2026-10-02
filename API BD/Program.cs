@@ -18,8 +18,8 @@ builder.Services.AddControllers();
 // OpenAPI (funciones integradas del template original)
 builder.Services.AddOpenApi();
 
-// Repositorios / almacenamiento. Implementación en memoria por ahora.
-builder.Services.AddSingleton<API_BD.Repositories.IMapRepository, API_BD.Repositories.InMemoryMapRepository>();
+// Repositorios.
+builder.Services.AddScoped<API_BD.Repositories.IMapRepository, API_BD.Repositories.DbMapRepository>();
 
 // Permitir llamadas desde el navegador (CORS) durante desarrollo.
 builder.Services.AddCors(options =>

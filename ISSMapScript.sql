@@ -11,7 +11,7 @@ create table PuntosInteres(
 	id int identity(1,1) primary key,
 	nombre varchar(100),
 	categoryId int,
-	descripcion varchar(100)
+	descripcion varchar(300)
 
 	constraint FK_PuntosInteres_Categorias 
 		foreign key (categoryId) references Categorias(id),
@@ -19,8 +19,8 @@ create table PuntosInteres(
 create table Coordenadas(
 	id int identity(1,1) primary key,
 	puntoId int,
-	x decimal(4,3),
-	y decimal(4,3),
+	x decimal(6,3),
+	y decimal(6,3),
 
 	constraint FK_Coordenadas_PuntosInteres
 		foreign key (puntoId) references PuntosInteres(id),
