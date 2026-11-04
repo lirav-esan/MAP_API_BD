@@ -2,19 +2,29 @@ create database ISSMap;
 go
 use ISSMap;
 go
+
+CREATE TABLE Juegos (
+    id INT IDENTITY(1,1) PRIMARY KEY,
+    juego VARCHAR(100) NOT NULL
+);
+
 create table Categorias(
 	id int identity(1,1) primary key,
 	categoria varchar(100) not null,
+	juegoId INT NOT NULL,
+    
+    CONSTRAINT FK_Categorias_Juegos 
+        FOREIGN KEY (juegoId) REFERENCES Juegos(id)
 );
 
 create table PuntosInteres(
 	id int identity(1,1) primary key,
 	nombre varchar(100),
 	categoryId int,
-	descripcion varchar(300)
+	descripcion varchar(300),
 
 	constraint FK_PuntosInteres_Categorias 
-		foreign key (categoryId) references Categorias(id),
+		foreign key (categoryId) references Categorias(id)
 );
 create table Coordenadas(
 	id int identity(1,1) primary key,
@@ -23,7 +33,7 @@ create table Coordenadas(
 	y decimal(6,3),
 
 	constraint FK_Coordenadas_PuntosInteres
-		foreign key (puntoId) references PuntosInteres(id),
+		foreign key (puntoId) references PuntosInteres(id)
 );
 create table Icons(
 	puntoId int,
@@ -49,6 +59,5 @@ create table PuntosGuardados(
 	constraint FK_PuntosGuardados_Usuarios
 		foreign key (userId) references Usuario(id),
 	constraint FK_PuntosGuardados_Coordenadas
-		foreign key (coordId) references Coordenadas(id),
-
+		foreign key (coordId) references Coordenadas(id)
 );

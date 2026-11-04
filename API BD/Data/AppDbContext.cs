@@ -11,6 +11,7 @@ namespace API_BD.Data
         }
 
         public DbSet<Usuario> Usuarios { get; set; }
+        public DbSet<JuegoEntity> Juegos { get; set; }
         public DbSet<CategoriaEntity> Categorias { get; set; }
         public DbSet<PuntoInteresEntity> PuntosInteres { get; set; }
         public DbSet<CoordenadaEntity> Coordenadas { get; set; }
@@ -31,12 +32,26 @@ namespace API_BD.Data
                 entity.Property(e => e.FechaRegistro).HasColumnName("fecha_registro");
             });
 
+            modelBuilder.Entity<JuegoEntity>(entity =>
+            {
+                entity.ToTable("Juegos");
+                entity.HasKey(e => e.Id);
+                entity.Property(e => e.Id).HasColumnName("id");
+                entity.Property(e => e.Juego).HasColumnName("juego").HasMaxLength(100).IsRequired();
+            });
+
             modelBuilder.Entity<CategoriaEntity>(entity =>
             {
                 entity.ToTable("Categorias");
                 entity.HasKey(e => e.Id);
                 entity.Property(e => e.Id).HasColumnName("id");
                 entity.Property(e => e.Categoria).HasColumnName("categoria").HasMaxLength(100).IsRequired();
+                entity.Property(e => e.JuegoId).HasColumnName("juegoId");
+
+                entity.HasOne(e => e.Juego)
+                    .WithMany(j => j.Categorias)
+                    .HasForeignKey(e => e.JuegoId)
+                    .OnDelete(DeleteBehavior.Restrict);
             });
 
             modelBuilder.Entity<PuntoInteresEntity>(entity =>

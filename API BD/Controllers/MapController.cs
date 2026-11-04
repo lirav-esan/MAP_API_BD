@@ -29,6 +29,20 @@ public class MapController : ControllerBase
         return Ok(points);
     }
 
+    [HttpGet("markers")]
+    public async Task<ActionResult<IEnumerable<MapMarkerDto>>> GetMarkers([FromQuery] string? juego, [FromQuery] string? category)
+    {
+        var markers = await _repo.GetMarkersAsync(juego, category);
+        return Ok(markers);
+    }
+
+    [HttpGet("categories/summary")]
+    public async Task<ActionResult<IEnumerable<MapCategorySummaryDto>>> GetCategorySummaries([FromQuery] string? juego)
+    {
+        var categories = await _repo.GetCategorySummariesAsync(juego);
+        return Ok(categories);
+    }
+
     [HttpGet("points/{id:int}")]
     public async Task<ActionResult<PointOfInterest>> GetPointById(int id)
     {

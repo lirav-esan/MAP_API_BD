@@ -41,6 +41,7 @@ namespace API_BD.Repositories
             var entity = await _context.PuntosInteres
                 .AsNoTracking()
                 .Include(p => p.Categoria)
+                    .ThenInclude(c => c!.Juego)
                 .Include(p => p.Icon)
                 .Include(p => p.Coordenadas)
                 .FirstOrDefaultAsync(p => p.Id == id);
@@ -53,6 +54,7 @@ namespace API_BD.Repositories
             var entities = await _context.PuntosInteres
                 .AsNoTracking()
                 .Include(p => p.Categoria)
+                    .ThenInclude(c => c!.Juego)
                 .Include(p => p.Icon)
                 .Where(p => p.Icon != null)
                 .OrderBy(p => p.Id)
@@ -79,27 +81,84 @@ namespace API_BD.Repositories
                 .ToList();
         }
 
-        private IQueryable<PuntoInteresEntity> BuildPointsQuery(string? category)
+        public async Task<IEnumerable<MapMarkerDto>> GetMarkersAsync(string? juego = null, string? category = null)
+        {
+            var entities = await BuildPointsQuery(category, juego)
+                .OrderBy(p => p.Id)
+                .ToListAsync();
+
+            return entities
+                .SelectMany(p => p.Coordenadas.OrderBy(c => c.Id).Select(c => new MapMarkerDto
+                {
+                    Id = c.Id.ToString(),
+                    Position = [c.X, c.Y],
+                    Category = p.Categoria?.Categoria ?? string.Empty,
+                    Group = p.Categoria?.Juego?.Juego ?? string.Empty,
+                    Title = p.Nombre ?? string.Empty,
+                    Content = p.Descripcion ?? string.Empty,
+                    IconUrl = p.Icon?.ImgUrl
+                }))
+                .ToList();
+        }
+
+        public async Task<IEnumerable<MapCategorySummaryDto>> GetCategorySummariesAsync(string? juego = null)
+        {
+            var entities = await BuildPointsQuery(null, juego).ToListAsync();
+
+            return entities
+                .GroupBy(p => new
+                {
+                    Id = p.Nombre ?? string.Empty,
+                    Group = p.Categoria?.Categoria ?? string.Empty
+                })
+                .OrderBy(g => g.Key.Group)
+                .ThenBy(g => g.Key.Id)
+                .Select(g => new MapCategorySummaryDto
+                {
+                    Id = g.Key.Id,
+                    Label = g.Key.Id,
+                    Count = g.Sum(p => p.Coordenadas.Count),
+                    Visible = true,
+                    Group = g.Key.Group
+                })
+                .ToList();
+        }
+
+        private IQueryable<PuntoInteresEntity> BuildPointsQuery(string? category, string? juego = null)
         {
             var query = _context.PuntosInteres
                 .AsNoTracking()
                 .Include(p => p.Categoria)
+                    .ThenInclude(c => c!.Juego)
                 .Include(p => p.Icon)
                 .Include(p => p.Coordenadas)
                 .AsQueryable();
 
-            if (string.IsNullOrWhiteSpace(category))
+            if (!string.IsNullOrWhiteSpace(category))
+            {
+                if (int.TryParse(category, out var categoryId))
+                {
+                    query = query.Where(p => p.CategoryId == categoryId);
+                }
+                else
+                {
+                    var normalizedCategory = category.Trim().ToLower();
+                    query = query.Where(p => p.Categoria != null && p.Categoria.Categoria.ToLower() == normalizedCategory);
+                }
+            }
+
+            if (string.IsNullOrWhiteSpace(juego))
             {
                 return query;
             }
 
-            if (int.TryParse(category, out var categoryId))
+            if (int.TryParse(juego, out var juegoId))
             {
-                return query.Where(p => p.CategoryId == categoryId);
+                return query.Where(p => p.Categoria != null && p.Categoria.JuegoId == juegoId);
             }
 
-            var normalized = category.Trim().ToLower();
-            return query.Where(p => p.Categoria != null && p.Categoria.Categoria.ToLower() == normalized);
+            var normalizedJuego = juego.Trim().ToLower();
+            return query.Where(p => p.Categoria != null && p.Categoria.Juego != null && p.Categoria.Juego.Juego.ToLower() == normalizedJuego);
         }
 
         private static PointOfInterest MapPoint(PuntoInteresEntity entity)
@@ -110,6 +169,7 @@ namespace API_BD.Repositories
                 Name = entity.Nombre ?? string.Empty,
                 CategoryId = entity.CategoryId ?? 0,
                 Category = entity.Categoria?.Categoria ?? string.Empty,
+                Group = entity.Categoria?.Juego?.Juego ?? string.Empty,
                 IconUrl = entity.Icon?.ImgUrl,
                 Description = entity.Descripcion,
                 Coordinates = entity.Coordenadas
