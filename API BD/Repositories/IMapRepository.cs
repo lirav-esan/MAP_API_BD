@@ -9,5 +9,7 @@ namespace API_BD.Repositories
         Task<PointOfInterest?> GetPointByIdAsync(int id);
         Task<IEnumerable<MapIconDto>> GetIconsAsync();
         Task<IEnumerable<Coordinate>> GetCoordinatesByCategoryAsync(string category);
+        Task<IEnumerable<MapMarkerDto>> GetMarkersAsync(string? juego = null, string? category = null);
+        Task<IEnumerable<MapCategorySummaryDto>> GetCategorySummariesAsync(string? juego = null);
     }
 }
