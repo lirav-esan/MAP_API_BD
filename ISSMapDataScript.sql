@@ -4487,3 +4487,3497 @@ BEGIN
         INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.jp/5499373/1c270cb8c879ade09f6ddbb8410ce5f9.jpeg/show');
     END;
 END;
+
+
+--- MAPA WUWA
+
+-- 1. Insertar el Juego
+INSERT INTO Juegos (juego) VALUES ('Wuthering Waves (Simulacrum Nexus)');
+DECLARE @juegoId INT = SCOPE_IDENTITY();
+
+-- 2. Insertar Categorías (GroupNames) y mapearlas temporalmente
+DECLARE @CatMap TABLE (NombreCat VARCHAR(100), CatId INT);
+INSERT INTO Categorias (categoria, juegoId) VALUES ('General', @juegoId);
+INSERT INTO @CatMap (NombreCat, CatId) VALUES ('General', SCOPE_IDENTITY());
+
+-- 3. Declarar variables para los puntos
+DECLARE @CatId INT;
+DECLARE @puntoId INT;
+
+-- 4. Insertar Puntos de Interés, Coordenadas e Iconos
+
+-- [1597988] Bloom of Hearkening x4 (Bloom of Hearkening)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Bloom of Hearkening x4', @CatId, 'Four Bloom of Hearkening is found in front of the Repair Workshop''s main hall entrance. It can be reached by using the Resonance Beacon on the northeast side of the Repair Workshop.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 92.16, 117.5);
+
+    IF 'https://img.game8.co/4634170/9f6bf7c576f6a317568df3adf8102e40.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4634170/9f6bf7c576f6a317568df3adf8102e40.png/show');
+    END;
+END;
+
+
+-- [1598003] Bloom of Hearkening x2 (Bloom of Hearkening)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Bloom of Hearkening x2', @CatId, 'Two Bloom of Hearkening is found near the lake beside the Repair Workshop. You can reach it from the southeast of the Repair Workshop''s Resonance Beacon.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 83.35, 119.9);
+
+    IF 'https://img.game8.co/4634170/9f6bf7c576f6a317568df3adf8102e40.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4634170/9f6bf7c576f6a317568df3adf8102e40.png/show');
+    END;
+END;
+
+
+-- [1598004] Bloom of Hearkening x3 (Bloom of Hearkening)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Bloom of Hearkening x3', @CatId, 'Found on the south side of Mengxuan Vale, near the outskirts of the area. A total of three Bloom of Hearkening can be found at this location.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 112.98, 143.56);
+
+    IF 'https://img.game8.co/4634170/9f6bf7c576f6a317568df3adf8102e40.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4634170/9f6bf7c576f6a317568df3adf8102e40.png/show');
+    END;
+END;
+
+
+-- [1598005] Bloom of Hearkening x3 (Bloom of Hearkening)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Bloom of Hearkening x3', @CatId, 'Located on the south side of Mengxuan Vale, on the side of the road. Three Bloom of Hearkening can be found amongst the patches of grass.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 113.95, 141.61);
+
+    IF 'https://img.game8.co/4634170/9f6bf7c576f6a317568df3adf8102e40.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4634170/9f6bf7c576f6a317568df3adf8102e40.png/show');
+    END;
+END;
+
+
+-- [1598006] Bloom of Hearkening x5 (Bloom of Hearkening)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Bloom of Hearkening x5', @CatId, 'Five Bloom of Hearkening is found at the northern entrance of Mengxuan Vale. They are near the Resonance Beacon located in the area.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 127.56, 126.04);
+
+    IF 'https://img.game8.co/4634170/9f6bf7c576f6a317568df3adf8102e40.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4634170/9f6bf7c576f6a317568df3adf8102e40.png/show');
+    END;
+END;
+
+
+-- [1598007] Bloom of Hearkening x5 (Bloom of Hearkening)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Bloom of Hearkening x5', @CatId, 'Found at the northern entrance of Mengxuan Vale, near the Resonance Beacon. Five Bloom of Hearkening can be found at this location.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 130.77, 129.51);
+
+    IF 'https://img.game8.co/4634170/9f6bf7c576f6a317568df3adf8102e40.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4634170/9f6bf7c576f6a317568df3adf8102e40.png/show');
+    END;
+END;
+
+
+-- [1598008] Bloom of Hearkening x3 (Bloom of Hearkening)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Bloom of Hearkening x3', @CatId, 'Three Bloom of Hearkening is found on the northern outskirts of Mengxuan Vale. It is directly on the north side of the Resonance Beacon located in the area.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 138.06, 122.75);
+
+    IF 'https://img.game8.co/4634170/9f6bf7c576f6a317568df3adf8102e40.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4634170/9f6bf7c576f6a317568df3adf8102e40.png/show');
+    END;
+END;
+
+
+-- [1598009] Bloom of Hearkening x3 (Bloom of Hearkening)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Bloom of Hearkening x3', @CatId, 'Located on the northern outskirts of Mengxuan Vale. Three Bloom of Hearkening can be found near a giant rock.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 135.4, 116.53);
+
+    IF 'https://img.game8.co/4634170/9f6bf7c576f6a317568df3adf8102e40.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4634170/9f6bf7c576f6a317568df3adf8102e40.png/show');
+    END;
+END;
+
+
+-- [1598010] Bloom of Hearkening x5 (Bloom of Hearkening)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Bloom of Hearkening x5', @CatId, 'Five Bloom of Hearkening is found amongst the tall grass on the south side of Heart of Flames. You can use the Resonance Nexus on the southwest side of Heart of Flames, cross over to the bridge on the east side, and then use the sensor around the foliage to look for the Bloom of Hearkening.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 161.36, 108.25);
+
+    IF 'https://img.game8.co/4634170/9f6bf7c576f6a317568df3adf8102e40.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4634170/9f6bf7c576f6a317568df3adf8102e40.png/show');
+    END;
+END;
+
+
+-- [1598011] Bloom of Hearkening x3 (Bloom of Hearkening)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Bloom of Hearkening x3', @CatId, 'Three Bloom of Hearkening is found on the roadside on the south side of Heart of Flames. You can use the Resonance Nexus on the southwest side of Heart of Flames, cross over to the bridge on the east side, and go right at the forked road to look for the Bloom of Hearkening.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 158.88, 105.85);
+
+    IF 'https://img.game8.co/4634170/9f6bf7c576f6a317568df3adf8102e40.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4634170/9f6bf7c576f6a317568df3adf8102e40.png/show');
+    END;
+END;
+
+
+-- [1598012] Bloom of Hearkening x3 (Bloom of Hearkening)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Bloom of Hearkening x3', @CatId, 'Found south of the Resonance Nexus, near the house with a Golden Tidal Heritage. The house is also on the northwest side of the Heart of Stillness.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 149.36, 81.21);
+
+    IF 'https://img.game8.co/4634170/9f6bf7c576f6a317568df3adf8102e40.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4634170/9f6bf7c576f6a317568df3adf8102e40.png/show');
+    END;
+END;
+
+
+-- [1598013] Bloom of Hearkening x5 (Bloom of Hearkening)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Bloom of Hearkening x5', @CatId, 'Located south of Resonance Nexus, on the northwest side of Heart of Stillness. Five Bloom of Hearkening can be found near a tree branch.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 148.64, 76.49);
+
+    IF 'https://img.game8.co/4634170/9f6bf7c576f6a317568df3adf8102e40.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4634170/9f6bf7c576f6a317568df3adf8102e40.png/show');
+    END;
+END;
+
+
+-- [1598014] Bloom of Hearkening x6 (Bloom of Hearkening)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Bloom of Hearkening x6', @CatId, 'Six Bloom of Hearkening is found at the elevated road on the north side of Mengxuan Vale.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 138.49, 144.9);
+
+    IF 'https://img.game8.co/4634170/9f6bf7c576f6a317568df3adf8102e40.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4634170/9f6bf7c576f6a317568df3adf8102e40.png/show');
+    END;
+END;
+
+
+-- [1598015] Rafter Kite (Rafter Kite)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Rafter Kite', @CatId, 'Found in the courtyard of Heart of Stillness, on top of the stone sculpture in the middle.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 116.09, 72.85);
+
+    IF 'https://img.game8.co/4556464/4784e1536bcd281abd88e23f005fce3b.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4556464/4784e1536bcd281abd88e23f005fce3b.png/show');
+    END;
+END;
+
+
+-- [1598016] Rafter Kite (Rafter Kite)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Rafter Kite', @CatId, 'Found on top of the buildings on the northern side of the Heart of Stillness. The buildings can be reached by using the edge of the nearby cliffs.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 133.88, 72.49);
+
+    IF 'https://img.game8.co/4556464/4784e1536bcd281abd88e23f005fce3b.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4556464/4784e1536bcd281abd88e23f005fce3b.png/show');
+    END;
+END;
+
+
+-- [1598017] Rafter Kite (Rafter Kite)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Rafter Kite', @CatId, 'Found north of the Resonance Nexus, northwest of the Heart of Stillness. It is located near an empty stall beside the river stream.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 160.65, 78.62);
+
+    IF 'https://img.game8.co/4556464/4784e1536bcd281abd88e23f005fce3b.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4556464/4784e1536bcd281abd88e23f005fce3b.png/show');
+    END;
+END;
+
+
+-- [1598018] Rafter Kite (Rafter Kite)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Rafter Kite', @CatId, 'Found underneath a bridge on the northeast side of the Resonance Nexus, which is located on the northwest side of the Heart of Stillness.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 158.25, 96.41);
+
+    IF 'https://img.game8.co/4556464/4784e1536bcd281abd88e23f005fce3b.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4556464/4784e1536bcd281abd88e23f005fce3b.png/show');
+    END;
+END;
+
+
+-- [1598019] Rafter Kite (Rafter Kite)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Rafter Kite', @CatId, 'Found on top of a pavilion on the cliff on the south side of the Heart of Flames.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 162.78, 111.09);
+
+    IF 'https://img.game8.co/4556464/4784e1536bcd281abd88e23f005fce3b.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4556464/4784e1536bcd281abd88e23f005fce3b.png/show');
+    END;
+END;
+
+
+-- [1598020] Rafter Kite (Rafter Kite)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Rafter Kite', @CatId, 'Found high up on top of the buildings at the Heart of Flames.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 192.06, 91.25);
+
+    IF 'https://img.game8.co/4556464/4784e1536bcd281abd88e23f005fce3b.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4556464/4784e1536bcd281abd88e23f005fce3b.png/show');
+    END;
+END;
+
+
+-- [1598021] Rafter Kite (Rafter Kite)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Rafter Kite', @CatId, 'Found on the side of the northern bridge of the Heart of Flames.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 193.93, 116.43);
+
+    IF 'https://img.game8.co/4556464/4784e1536bcd281abd88e23f005fce3b.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4556464/4784e1536bcd281abd88e23f005fce3b.png/show');
+    END;
+END;
+
+
+-- [1598022] Rafter Kite (Rafter Kite)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Rafter Kite', @CatId, 'Found underneath the southeast bridge of the Heart of Flames.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 176.85, 120.7);
+
+    IF 'https://img.game8.co/4556464/4784e1536bcd281abd88e23f005fce3b.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4556464/4784e1536bcd281abd88e23f005fce3b.png/show');
+    END;
+END;
+
+
+-- [1598023] Rafter Kite (Rafter Kite)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Rafter Kite', @CatId, 'Found on the eastern path of the Heart of Flames, on top of a decaying tree trunk.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 187.17, 129.51);
+
+    IF 'https://img.game8.co/4556464/4784e1536bcd281abd88e23f005fce3b.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4556464/4784e1536bcd281abd88e23f005fce3b.png/show');
+    END;
+END;
+
+
+-- [1598024] Rafter Kite (Rafter Kite)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Rafter Kite', @CatId, 'Found on top of a tall pillar on the side of the cliff at the Heart of Stillness.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 130.37, 90.41);
+
+    IF 'https://img.game8.co/4556464/4784e1536bcd281abd88e23f005fce3b.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4556464/4784e1536bcd281abd88e23f005fce3b.png/show');
+    END;
+END;
+
+
+-- [1598025] Rafter Kite (Rafter Kite)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Rafter Kite', @CatId, 'Located next to the path leading to the Thousandbloom Grotto. Be cautious approaching it, as there is a Censure Lock Crisis.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 105.07, 93.23);
+
+    IF 'https://img.game8.co/4556464/4784e1536bcd281abd88e23f005fce3b.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4556464/4784e1536bcd281abd88e23f005fce3b.png/show');
+    END;
+END;
+
+
+-- [1598026] Rafter Kite (Rafter Kite)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Rafter Kite', @CatId, 'Seen flying around at the top of the pavilion on the northwest side of the Repair Workshop.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 99.19, 94.34);
+
+    IF 'https://img.game8.co/4556464/4784e1536bcd281abd88e23f005fce3b.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4556464/4784e1536bcd281abd88e23f005fce3b.png/show');
+    END;
+END;
+
+
+-- [1598027] Rafter Kite (Rafter Kite)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Rafter Kite', @CatId, 'Seen flying on top of a giant boulder at the western border of the Heart of Frost.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 80.74, 142.02);
+
+    IF 'https://img.game8.co/4556464/4784e1536bcd281abd88e23f005fce3b.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4556464/4784e1536bcd281abd88e23f005fce3b.png/show');
+    END;
+END;
+
+
+-- [1598028] Rafter Kite (Rafter Kite)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Rafter Kite', @CatId, 'Located at the central area of the Heart of Bloom.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 62.19, 64.44);
+
+    IF 'https://img.game8.co/4556464/4784e1536bcd281abd88e23f005fce3b.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4556464/4784e1536bcd281abd88e23f005fce3b.png/show');
+    END;
+END;
+
+
+-- [1598029] Rafter Kite (Rafter Kite)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Rafter Kite', @CatId, 'Located on the eastern cliffside of the Heart of Bloom.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 44.81, 92.86);
+
+    IF 'https://img.game8.co/4556464/4784e1536bcd281abd88e23f005fce3b.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4556464/4784e1536bcd281abd88e23f005fce3b.png/show');
+    END;
+END;
+
+
+-- [1598030] Rafter Kite (Rafter Kite)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Rafter Kite', @CatId, 'Located inside a spherical structure on the north side of the Heart of Bloom.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 82.42, 73.23);
+
+    IF 'https://img.game8.co/4556464/4784e1536bcd281abd88e23f005fce3b.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4556464/4784e1536bcd281abd88e23f005fce3b.png/show');
+    END;
+END;
+
+
+-- [1598031] Rafter Kite (Rafter Kite)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Rafter Kite', @CatId, 'Located on top of a cliff on the western side of the Heart of Appearance.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 62.19, 156.34);
+
+    IF 'https://img.game8.co/4556464/4784e1536bcd281abd88e23f005fce3b.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4556464/4784e1536bcd281abd88e23f005fce3b.png/show');
+    END;
+END;
+
+
+-- [1598032] Rafter Kite (Rafter Kite)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Rafter Kite', @CatId, 'Located on the top of a snowy pavilion bridge on the south side of the Heart of Frost.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 91.4, 166.5);
+
+    IF 'https://img.game8.co/4556464/4784e1536bcd281abd88e23f005fce3b.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4556464/4784e1536bcd281abd88e23f005fce3b.png/show');
+    END;
+END;
+
+
+-- [1598033] Rafter Kite (Rafter Kite)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Rafter Kite', @CatId, 'Located near the hanging bridge on the northwest side of the Heart of Frost.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 109.75, 160.78);
+
+    IF 'https://img.game8.co/4556464/4784e1536bcd281abd88e23f005fce3b.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4556464/4784e1536bcd281abd88e23f005fce3b.png/show');
+    END;
+END;
+
+
+-- [1598034] Rafter Kite (Rafter Kite)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Rafter Kite', @CatId, 'Located inside a spherical structure on the northeast side of the Heart of Frost.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 119.63, 178.94);
+
+    IF 'https://img.game8.co/4556464/4784e1536bcd281abd88e23f005fce3b.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4556464/4784e1536bcd281abd88e23f005fce3b.png/show');
+    END;
+END;
+
+
+-- [1598035] Rafter Kite (Rafter Kite)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Rafter Kite', @CatId, 'Found on top of a boulder on the western border of the Heart of Frost.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 135.03, 153.57);
+
+    IF 'https://img.game8.co/4556464/4784e1536bcd281abd88e23f005fce3b.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4556464/4784e1536bcd281abd88e23f005fce3b.png/show');
+    END;
+END;
+
+
+-- [1598036] Rafter Kite (Rafter Kite)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Rafter Kite', @CatId, 'Found flying around a tall cliff on the northeast side of the Heart of Frost.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 140.06, 201.05);
+
+    IF 'https://img.game8.co/4556464/4784e1536bcd281abd88e23f005fce3b.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4556464/4784e1536bcd281abd88e23f005fce3b.png/show');
+    END;
+END;
+
+
+-- [1598037] Rafter Kite (Rafter Kite)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Rafter Kite', @CatId, 'Found near the Seat of Serenity, which is on the northeast side of Mengxuan Vale.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 148.35, 150.21);
+
+    IF 'https://img.game8.co/4556464/4784e1536bcd281abd88e23f005fce3b.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4556464/4784e1536bcd281abd88e23f005fce3b.png/show');
+    END;
+END;
+
+
+-- [1598038] Rafter Kite (Rafter Kite)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Rafter Kite', @CatId, 'Found on top of a lamp post on the northeast path outside of the Mengxuan Vale.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 136.11, 139.75);
+
+    IF 'https://img.game8.co/4556464/4784e1536bcd281abd88e23f005fce3b.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4556464/4784e1536bcd281abd88e23f005fce3b.png/show');
+    END;
+END;
+
+
+-- [1598039] Rafter Kite (Rafter Kite)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Rafter Kite', @CatId, 'Found on a lamp post on the western path near the border of Mengxuan Vale.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 129.7, 114.68);
+
+    IF 'https://img.game8.co/4556464/4784e1536bcd281abd88e23f005fce3b.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4556464/4784e1536bcd281abd88e23f005fce3b.png/show');
+    END;
+END;
+
+
+-- [1598040] Rafter Kite (Rafter Kite)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Rafter Kite', @CatId, 'Found on the side of a bridge at the northeast side of Mengxuan Village.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 142.82, 114.87);
+
+    IF 'https://img.game8.co/4556464/4784e1536bcd281abd88e23f005fce3b.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4556464/4784e1536bcd281abd88e23f005fce3b.png/show');
+    END;
+END;
+
+
+-- [1598041] Rafter Kite (Rafter Kite)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Rafter Kite', @CatId, 'Found flying near a stone fox statue inside the courtyard of the Mengxuan Vale.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 128.02, 125.35);
+
+    IF 'https://img.game8.co/4556464/4784e1536bcd281abd88e23f005fce3b.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4556464/4784e1536bcd281abd88e23f005fce3b.png/show');
+    END;
+END;
+
+
+-- [1598042] Rafter Kite (Rafter Kite)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Rafter Kite', @CatId, 'Found on top of a stone fox statue inside the courtyard of the Mengxuan Vale.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 131.48, 128.8);
+
+    IF 'https://img.game8.co/4556464/4784e1536bcd281abd88e23f005fce3b.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4556464/4784e1536bcd281abd88e23f005fce3b.png/show');
+    END;
+END;
+
+
+-- [1598043] Rafter Kite (Rafter Kite)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Rafter Kite', @CatId, 'Found on top of a lamp post inside the courtyard of the Mengxuan Vale.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 119.43, 131.46);
+
+    IF 'https://img.game8.co/4556464/4784e1536bcd281abd88e23f005fce3b.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4556464/4784e1536bcd281abd88e23f005fce3b.png/show');
+    END;
+END;
+
+
+-- [1598044] Rafter Kite (Rafter Kite)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Rafter Kite', @CatId, 'Found on top of a tall cliff on the south side of the Mengxuan Vale.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 111.64, 136.0);
+
+    IF 'https://img.game8.co/4556464/4784e1536bcd281abd88e23f005fce3b.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4556464/4784e1536bcd281abd88e23f005fce3b.png/show');
+    END;
+END;
+
+
+-- [1598525] Tidal Heritage (Supply Chest)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Tidal Heritage', @CatId, 'Found after defeating a mob of enemies on the south of the Resonance Nexus at the northwest side of Heart of Stillness.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 148.82, 80.02);
+
+    IF 'https://img.game8.co/3896539/13d127fad255663ecebb4ab67e94854f.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3896539/13d127fad255663ecebb4ab67e94854f.png/show');
+    END;
+END;
+
+
+-- [1598526] Supply Chest (Supply Chest)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Supply Chest', @CatId, 'Found beside a building near a waterway at Heartscape Labyrinth.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 188.1, 59.1);
+
+    IF 'https://img.game8.co/3894792/b145f33baa32312ad31b93fba5b159b3.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3894792/b145f33baa32312ad31b93fba5b159b3.png/show');
+    END;
+END;
+
+
+-- [1598527] Supply Chest (Supply Chest)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Supply Chest', @CatId, 'Found at the exit of the Heartscape Labyrinth main hall gate. This chest is guarded by several enemies.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 174.25, 80.97);
+
+    IF 'https://img.game8.co/3894791/8a0a8b26e5e90f55ae32a3f759112a4f.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3894791/8a0a8b26e5e90f55ae32a3f759112a4f.png/show');
+    END;
+END;
+
+
+-- [1598528] Supply Chest (Supply Chest)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Supply Chest', @CatId, 'Found in one of the halls in the Heart of Flames near the Heartscape Labyrinth. The chest is located above the mezzanine.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 194.2, 90.64);
+
+    IF 'https://img.game8.co/3894791/8a0a8b26e5e90f55ae32a3f759112a4f.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3894791/8a0a8b26e5e90f55ae32a3f759112a4f.png/show');
+    END;
+END;
+
+
+-- [1598529] Tidal Heritage (Supply Chest)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Tidal Heritage', @CatId, 'Found after defeating a mob of enemies on the northwest side of the Resonance Nexus at the northwest side of the Heart of Stillness.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 153.77, 69.82);
+
+    IF 'https://img.game8.co/3896539/13d127fad255663ecebb4ab67e94854f.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3896539/13d127fad255663ecebb4ab67e94854f.png/show');
+    END;
+END;
+
+
+-- [1598530] Supply Chest (Supply Chest)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Supply Chest', @CatId, 'Found at the exit of the Heartscape Labyrinth main hall gate. The chest is located under a hidden water formation with a single pier near a waterfall.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 167.37, 69.48);
+
+    IF 'https://img.game8.co/3894791/8a0a8b26e5e90f55ae32a3f759112a4f.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3894791/8a0a8b26e5e90f55ae32a3f759112a4f.png/show');
+    END;
+END;
+
+
+-- [1598531] Supply Chest (Supply Chest)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Supply Chest', @CatId, 'Located on the south side of the Heartscape Labyrinth. Found after defeating the enemies in the Treasures of Perilous Enclave Challenge.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 161.88, 61.8);
+
+    IF 'https://img.game8.co/3894791/8a0a8b26e5e90f55ae32a3f759112a4f.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3894791/8a0a8b26e5e90f55ae32a3f759112a4f.png/show');
+    END;
+END;
+
+
+-- [1598532] Supply Chest (Supply Chest)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Supply Chest', @CatId, 'Located on the south side of the Heartscape Labyrinth. Found after defeating the enemies in the Treasures of Perilous Enclave Challenge.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 162.48, 63.46);
+
+    IF 'https://img.game8.co/3894794/4f077e716f334f517ae2101827763281.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3894794/4f077e716f334f517ae2101827763281.png/show');
+    END;
+END;
+
+
+-- [1598533] Supply Chest (Supply Chest)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Supply Chest', @CatId, 'Located on the south side of the Heartscape Labyrinth. Found after defeating the enemies in the Treasures of Perilous Enclave Challenge.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 161.09, 59.97);
+
+    IF 'https://img.game8.co/3894792/b145f33baa32312ad31b93fba5b159b3.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3894792/b145f33baa32312ad31b93fba5b159b3.png/show');
+    END;
+END;
+
+
+-- [1598534] Supply Chest (Supply Chest)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Supply Chest', @CatId, 'Found on the top of the tower near the Resonance Nexus at the northwest side of the Heart of Stillness.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 142.54, 81.23);
+
+    IF 'https://img.game8.co/3894791/8a0a8b26e5e90f55ae32a3f759112a4f.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3894791/8a0a8b26e5e90f55ae32a3f759112a4f.png/show');
+    END;
+END;
+
+
+-- [1598535] Tidal Heritage (Supply Chest)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Tidal Heritage', @CatId, 'Found on the south side of the Tacet Field, near the bridge, in the Heart of Flames.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 193.16, 122.27);
+
+    IF 'https://img.game8.co/3896539/13d127fad255663ecebb4ab67e94854f.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3896539/13d127fad255663ecebb4ab67e94854f.png/show');
+    END;
+END;
+
+
+-- [1598536] Tidal Heritage (Supply Chest)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Tidal Heritage', @CatId, 'Found at the high road near the Tacet Discord Nest in the Heart of Flames.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 185.93, 129.93);
+
+    IF 'https://img.game8.co/3896539/13d127fad255663ecebb4ab67e94854f.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3896539/13d127fad255663ecebb4ab67e94854f.png/show');
+    END;
+END;
+
+
+-- [1598537] Supply Chest (Supply Chest)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Supply Chest', @CatId, 'Found at the top of the center bridge, behind the open wall-like object, near the Tacet Discord Nest.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 180.36, 120.09);
+
+    IF 'https://img.game8.co/3894791/8a0a8b26e5e90f55ae32a3f759112a4f.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3894791/8a0a8b26e5e90f55ae32a3f759112a4f.png/show');
+    END;
+END;
+
+
+-- [1598538] Supply Chest (Supply Chest)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Supply Chest', @CatId, 'Located near the bridge at the Heart of Flames. Found after defeating the enemies in the Treasures of Perilous Enclave Challenge.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 178.61, 127.67);
+
+    IF 'https://img.game8.co/3894791/8a0a8b26e5e90f55ae32a3f759112a4f.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3894791/8a0a8b26e5e90f55ae32a3f759112a4f.png/show');
+    END;
+END;
+
+
+-- [1598539] Supply Chest (Supply Chest)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Supply Chest', @CatId, 'Located near the bridge at the Heart of Flames. Found after defeating the enemies in the Treasures of Perilous Enclave Challenge.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 178.95, 129.41);
+
+    IF 'https://img.game8.co/3894794/4f077e716f334f517ae2101827763281.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3894794/4f077e716f334f517ae2101827763281.png/show');
+    END;
+END;
+
+
+-- [1598540] Supply Chest (Supply Chest)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Supply Chest', @CatId, 'Located near the bridge at the Heart of Flames. Found after defeating the enemies in the Treasures of Perilous Enclave Challenge.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 178.25, 125.67);
+
+    IF 'https://img.game8.co/3894792/b145f33baa32312ad31b93fba5b159b3.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3894792/b145f33baa32312ad31b93fba5b159b3.png/show');
+    END;
+END;
+
+
+-- [1598541] Supply Chest (Supply Chest)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Supply Chest', @CatId, 'Located on the higher ground on the north side of the bridge near the Resonance Beacon, which is on the northwest side of Heart of Stillness. Found after defeating the enemies in the Treasures of Perilous Enclave Challenge at Heart of Flames.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 173.73, 92.65);
+
+    IF 'https://img.game8.co/3894791/8a0a8b26e5e90f55ae32a3f759112a4f.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3894791/8a0a8b26e5e90f55ae32a3f759112a4f.png/show');
+    END;
+END;
+
+
+-- [1598542] Supply Chest (Supply Chest)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Supply Chest', @CatId, 'Located on the higher ground on the north side of the bridge near the Resonance Beacon, which is on the northwest side of Heart of Stillness. Found after defeating the enemies in the Treasures of Perilous Enclave Challenge at Heart of Flames.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 175.21, 92.82);
+
+    IF 'https://img.game8.co/3894794/4f077e716f334f517ae2101827763281.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3894794/4f077e716f334f517ae2101827763281.png/show');
+    END;
+END;
+
+
+-- [1598543] Supply Chest (Supply Chest)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Supply Chest', @CatId, 'Located on the higher ground on the north side of the bridge near the Resonance Beacon, which is on the northwest side of Heart of Stillness. Found after defeating the enemies in the Treasures of Perilous Enclave Challenge at Heart of Flames.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 171.47, 92.82);
+
+    IF 'https://img.game8.co/3894792/b145f33baa32312ad31b93fba5b159b3.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3894792/b145f33baa32312ad31b93fba5b159b3.png/show');
+    END;
+END;
+
+
+-- [1598544] Tidal Heritage (Supply Chest)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Tidal Heritage', @CatId, 'Found north of the bridge at the border of the Heart of Stillness and Heart of Flames. Located in a cave-in with several enemies.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 173.82, 95.69);
+
+    IF 'https://img.game8.co/3896539/13d127fad255663ecebb4ab67e94854f.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3896539/13d127fad255663ecebb4ab67e94854f.png/show');
+    END;
+END;
+
+
+-- [1598545] Supply Chest (Supply Chest)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Supply Chest', @CatId, 'Located south of the bridge and the Controlled Anomaly Zone. Found after defeating the enemies in the Treasures of Perilous Enclave Challenge.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 169.21, 111.82);
+
+    IF 'https://img.game8.co/3894791/8a0a8b26e5e90f55ae32a3f759112a4f.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3894791/8a0a8b26e5e90f55ae32a3f759112a4f.png/show');
+    END;
+END;
+
+
+-- [1598546] Supply Chest (Supply Chest)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Supply Chest', @CatId, 'Located south of the bridge and the Controlled Anomaly Zone. Found after defeating the enemies in the Treasures of Perilous Enclave Challenge.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 168.27, 110.53);
+
+    IF 'https://img.game8.co/3894794/4f077e716f334f517ae2101827763281.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3894794/4f077e716f334f517ae2101827763281.png/show');
+    END;
+END;
+
+
+-- [1598547] Supply Chest (Supply Chest)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Supply Chest', @CatId, 'Located south of the bridge and the Controlled Anomaly Zone. Found after defeating the enemies in the Treasures of Perilous Enclave Challenge.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 170.06, 112.76);
+
+    IF 'https://img.game8.co/3894792/b145f33baa32312ad31b93fba5b159b3.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3894792/b145f33baa32312ad31b93fba5b159b3.png/show');
+    END;
+END;
+
+
+-- [1598548] Supply Chest (Supply Chest)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Supply Chest', @CatId, 'Found on top of the center bridge at the border of Mengxuan Vale and Heart of Stillness.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 144.98, 110.19);
+
+    IF 'https://img.game8.co/3894791/8a0a8b26e5e90f55ae32a3f759112a4f.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3894791/8a0a8b26e5e90f55ae32a3f759112a4f.png/show');
+    END;
+END;
+
+
+-- [1598549] Tidal Heritage (Supply Chest)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Tidal Heritage', @CatId, 'Found on the outskirts of a large settlement on the west side of the map at the Heart of Stillness.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 128.68, 62.32);
+
+    IF 'https://img.game8.co/3896539/13d127fad255663ecebb4ab67e94854f.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3896539/13d127fad255663ecebb4ab67e94854f.png/show');
+    END;
+END;
+
+
+-- [1598550] Supply Chest (Supply Chest)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Supply Chest', @CatId, 'Found behind the northernmost building of a large settlement west of the Heart of Stillness.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 133.8, 71.96);
+
+    IF 'https://img.game8.co/3894792/b145f33baa32312ad31b93fba5b159b3.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3894792/b145f33baa32312ad31b93fba5b159b3.png/show');
+    END;
+END;
+
+
+-- [1598551] Tidal Heritage (Supply Chest)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Tidal Heritage', @CatId, 'Found after completing the Censure Lock Crisis Challenge in the Heart of Flames.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 235.01, 125.73);
+
+    IF 'https://img.game8.co/3896539/13d127fad255663ecebb4ab67e94854f.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3896539/13d127fad255663ecebb4ab67e94854f.png/show');
+    END;
+END;
+
+
+-- [1598552] Supply Chest (Supply Chest)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Supply Chest', @CatId, 'Located to the south of the large settlement in the west of Heart of Stillness and above the Thousandbloom Grotto. Found after defeating the enemies in the Treasures of Perilous Enclave Challenge.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 94.38, 81.52);
+
+    IF 'https://img.game8.co/3894791/8a0a8b26e5e90f55ae32a3f759112a4f.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3894791/8a0a8b26e5e90f55ae32a3f759112a4f.png/show');
+    END;
+END;
+
+
+-- [1598553] Supply Chest (Supply Chest)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Supply Chest', @CatId, 'Located to the south of the large settlement in the west of Heart of Stillness and above the Thousandbloom Grotto. Found after defeating the enemies in the Treasures of Perilous Enclave Challenge.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 94.8, 79.73);
+
+    IF 'https://img.game8.co/3894794/4f077e716f334f517ae2101827763281.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3894794/4f077e716f334f517ae2101827763281.png/show');
+    END;
+END;
+
+
+-- [1598554] Supply Chest (Supply Chest)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Supply Chest', @CatId, 'Located to the south of the large settlement in the west of Heart of Stillness and above the Thousandbloom Grotto. Found after defeating the enemies in the Treasures of Perilous Enclave Challenge.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 95.4, 84.0);
+
+    IF 'https://img.game8.co/3894792/b145f33baa32312ad31b93fba5b159b3.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3894792/b145f33baa32312ad31b93fba5b159b3.png/show');
+    END;
+END;
+
+
+-- [1598555] Supply Chest (Supply Chest)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Supply Chest', @CatId, 'Found inside the Thousandbloom Grotto, on top of a platform in a submerged area near a Jade Platform.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 119.38, 17.83);
+
+    IF 'https://img.game8.co/3894791/8a0a8b26e5e90f55ae32a3f759112a4f.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3894791/8a0a8b26e5e90f55ae32a3f759112a4f.png/show');
+    END;
+END;
+
+
+-- [1598556] Tidal Heritage (Supply Chest)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Tidal Heritage', @CatId, 'Found outside the north path towards the Thousandbloom Grotto.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 110.3, 94.24);
+
+    IF 'https://img.game8.co/3896539/13d127fad255663ecebb4ab67e94854f.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3896539/13d127fad255663ecebb4ab67e94854f.png/show');
+    END;
+END;
+
+
+-- [1598557] Supply Chest (Supply Chest)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Supply Chest', @CatId, 'Found on top of a tower near the Thousandbloom Grotto and north of the Repair Workshop.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 99.36, 94.5);
+
+    IF 'https://img.game8.co/3894791/8a0a8b26e5e90f55ae32a3f759112a4f.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3894791/8a0a8b26e5e90f55ae32a3f759112a4f.png/show');
+    END;
+END;
+
+
+-- [1598558] Tidal Heritage (Supply Chest)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Tidal Heritage', @CatId, 'Found northeast of the Heart of Bloom, near the Wandering Heart Ruins.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 74.99, 82.04);
+
+    IF 'https://img.game8.co/3896539/13d127fad255663ecebb4ab67e94854f.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3896539/13d127fad255663ecebb4ab67e94854f.png/show');
+    END;
+END;
+
+
+-- [1598559] Supply Chest (Supply Chest)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Supply Chest', @CatId, 'Found on the south side of the Tacet Field: Heart of the Stillness. Additionally, it is surrounded by mobs.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 62.58, 120.66);
+
+    IF 'https://img.game8.co/3894791/8a0a8b26e5e90f55ae32a3f759112a4f.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3894791/8a0a8b26e5e90f55ae32a3f759112a4f.png/show');
+    END;
+END;
+
+
+-- [1598560] Tidal Heritage (Supply Chest)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Tidal Heritage', @CatId, 'Found on the east side of the Tacet Field: Heart of Stillness, near the border of the Heart of Frost.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 80.96, 139.89);
+
+    IF 'https://img.game8.co/3896539/13d127fad255663ecebb4ab67e94854f.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3896539/13d127fad255663ecebb4ab67e94854f.png/show');
+    END;
+END;
+
+
+-- [1598561] Tidal Heritage (Supply Chest)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Tidal Heritage', @CatId, 'Found near the Repair Workshop along the pathway towards the northern entrance of the area.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 98.19, 120.66);
+
+    IF 'https://img.game8.co/3896539/13d127fad255663ecebb4ab67e94854f.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3896539/13d127fad255663ecebb4ab67e94854f.png/show');
+    END;
+END;
+
+
+-- [1598562] Tidal Heritage (Supply Chest)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Tidal Heritage', @CatId, 'Found on the southwest side of the Mengxuan Vale.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 115.71, 115.47);
+
+    IF 'https://img.game8.co/3896539/13d127fad255663ecebb4ab67e94854f.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3896539/13d127fad255663ecebb4ab67e94854f.png/show');
+    END;
+END;
+
+
+-- [1598563] Tidal Heritage (Supply Chest)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Tidal Heritage', @CatId, 'Found on the west side of the Mengxuan Vale.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 128.08, 112.59);
+
+    IF 'https://img.game8.co/3896539/13d127fad255663ecebb4ab67e94854f.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3896539/13d127fad255663ecebb4ab67e94854f.png/show');
+    END;
+END;
+
+
+-- [1598564] Supply Chest (Supply Chest)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Supply Chest', @CatId, 'Located east of Mengxuan Vale, near a Controlled Anomaly Zone. Found after defeating enemies in the Treasures of Perilous Enclave Challenge.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 132.51, 158.17);
+
+    IF 'https://img.game8.co/3894791/8a0a8b26e5e90f55ae32a3f759112a4f.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3894791/8a0a8b26e5e90f55ae32a3f759112a4f.png/show');
+    END;
+END;
+
+
+-- [1598565] Supply Chest (Supply Chest)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Supply Chest', @CatId, 'Located east of Mengxuan Vale, near a Controlled Anomaly Zone. Found after defeating enemies in the Treasures of Perilous Enclave Challenge.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 133.13, 161.13);
+
+    IF 'https://img.game8.co/3894792/b145f33baa32312ad31b93fba5b159b3.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3894792/b145f33baa32312ad31b93fba5b159b3.png/show');
+    END;
+END;
+
+
+-- [1598566] Supply Chest (Supply Chest)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Supply Chest', @CatId, 'Located east of Mengxuan Vale, near a Controlled Anomaly Zone. Found after defeating enemies in the Treasures of Perilous Enclave Challenge.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 132.43, 156.78);
+
+    IF 'https://img.game8.co/3894794/4f077e716f334f517ae2101827763281.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3894794/4f077e716f334f517ae2101827763281.png/show');
+    END;
+END;
+
+
+-- [1598567] Supply Chest (Supply Chest)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Supply Chest', @CatId, 'Found on the south edge of the map where water flow transforms into a waterfall, near the Heart of Appearance.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 51.24, 175.9);
+
+    IF 'https://img.game8.co/3894792/b145f33baa32312ad31b93fba5b159b3.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3894792/b145f33baa32312ad31b93fba5b159b3.png/show');
+    END;
+END;
+
+
+-- [1598568] Supply Chest (Supply Chest)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Supply Chest', @CatId, 'Located directly on the north side of the Heart of Appearance Resonance Beacon. Found after defeating the enemies in the Treasures of Perilous Enclave Challenge.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 81.04, 181.95);
+
+    IF 'https://img.game8.co/3894791/8a0a8b26e5e90f55ae32a3f759112a4f.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3894791/8a0a8b26e5e90f55ae32a3f759112a4f.png/show');
+    END;
+END;
+
+
+-- [1598569] Supply Chest (Supply Chest)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Supply Chest', @CatId, 'Located directly on the north side of the Heart of Appearance Resonance Beacon. Found after defeating the enemies in the Treasures of Perilous Enclave Challenge.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 80.86, 184.44);
+
+    IF 'https://img.game8.co/3894792/b145f33baa32312ad31b93fba5b159b3.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3894792/b145f33baa32312ad31b93fba5b159b3.png/show');
+    END;
+END;
+
+
+-- [1598570] Supply Chest (Supply Chest)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Supply Chest', @CatId, 'Located directly on the north side of the Heart of Appearance Resonance Beacon. Found after defeating the enemies in the Treasures of Perilous Enclave Challenge.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 80.59, 179.55);
+
+    IF 'https://img.game8.co/3894794/4f077e716f334f517ae2101827763281.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3894794/4f077e716f334f517ae2101827763281.png/show');
+    END;
+END;
+
+
+-- [1598571] Tidal Heritage (Supply Chest)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Tidal Heritage', @CatId, 'Found south of Stillfrost Crossing, underneath a land bridge.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 67.87, 148.5);
+
+    IF 'https://img.game8.co/3896539/13d127fad255663ecebb4ab67e94854f.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3896539/13d127fad255663ecebb4ab67e94854f.png/show');
+    END;
+END;
+
+
+-- [1598572] Tidal Heritage (Supply Chest)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Tidal Heritage', @CatId, 'Found on the northwest side of the Resonance Beacon at the Heart of Appearance.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 85.85, 168.52);
+
+    IF 'https://img.game8.co/3896539/13d127fad255663ecebb4ab67e94854f.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3896539/13d127fad255663ecebb4ab67e94854f.png/show');
+    END;
+END;
+
+
+-- [1598573] Supply Chest (Supply Chest)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Supply Chest', @CatId, 'Found on a bridge tower on the north side of the Heart of Appearance.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 97.23, 166.92);
+
+    IF 'https://img.game8.co/3894791/8a0a8b26e5e90f55ae32a3f759112a4f.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3894791/8a0a8b26e5e90f55ae32a3f759112a4f.png/show');
+    END;
+END;
+
+
+-- [1598574] Supply Chest (Supply Chest)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Supply Chest', @CatId, 'Located directly north of the Rime Grotto on the east side of the map. Found after defeating the enemies in the Treasures of Perilous Enclave Challenge.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 142.59, 181.86);
+
+    IF 'https://img.game8.co/3894791/8a0a8b26e5e90f55ae32a3f759112a4f.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3894791/8a0a8b26e5e90f55ae32a3f759112a4f.png/show');
+    END;
+END;
+
+
+-- [1598575] Supply Chest (Supply Chest)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Supply Chest', @CatId, 'Located directly north of the Rime Grotto on the east side of the map. Found after defeating the enemies in the Treasures of Perilous Enclave Challenge.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 142.86, 183.65);
+
+    IF 'https://img.game8.co/3894792/b145f33baa32312ad31b93fba5b159b3.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3894792/b145f33baa32312ad31b93fba5b159b3.png/show');
+    END;
+END;
+
+
+-- [1598576] Supply Chest (Supply Chest)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Supply Chest', @CatId, 'Located directly north of the Rime Grotto on the east side of the map. Found after defeating the enemies in the Treasures of Perilous Enclave Challenge.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 142.59, 180.26);
+
+    IF 'https://img.game8.co/3894794/4f077e716f334f517ae2101827763281.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3894794/4f077e716f334f517ae2101827763281.png/show');
+    END;
+END;
+
+
+-- [1598577] Supply Chest (Supply Chest)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Supply Chest', @CatId, 'Located southeast of the Rime Grotto on the east side of the map. Found after defeating the enemies in the Treasures of Perilous Enclave Challenge.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 115.91, 195.21);
+
+    IF 'https://img.game8.co/3894791/8a0a8b26e5e90f55ae32a3f759112a4f.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3894791/8a0a8b26e5e90f55ae32a3f759112a4f.png/show');
+    END;
+END;
+
+
+-- [1598578] Supply Chest (Supply Chest)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Supply Chest', @CatId, 'Located southeast of the Rime Grotto on the east side of the map. Found after defeating the enemies in the Treasures of Perilous Enclave Challenge.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 116.44, 197.24);
+
+    IF 'https://img.game8.co/3894792/b145f33baa32312ad31b93fba5b159b3.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3894792/b145f33baa32312ad31b93fba5b159b3.png/show');
+    END;
+END;
+
+
+-- [1598579] Supply Chest (Supply Chest)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Supply Chest', @CatId, 'Located southeast of the Rime Grotto on the east side of the map. Found after defeating the enemies in the Treasures of Perilous Enclave Challenge.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 115.56, 194.13);
+
+    IF 'https://img.game8.co/3894794/4f077e716f334f517ae2101827763281.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3894794/4f077e716f334f517ae2101827763281.png/show');
+    END;
+END;
+
+
+-- [1598580] Tidal Heritage (Supply Chest)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Tidal Heritage', @CatId, 'Found on the south side of the Rime Grotto, which is on the east side of the map.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 113.24, 183.91);
+
+    IF 'https://img.game8.co/3896539/13d127fad255663ecebb4ab67e94854f.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3896539/13d127fad255663ecebb4ab67e94854f.png/show');
+    END;
+END;
+
+
+-- [1598770] Tidal Heritage (Supply Chest)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Tidal Heritage', @CatId, 'Found after completing the Censure Lock Crisis and defeating the Myriadform Bloomburst.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 103.54, 89.79);
+
+    IF 'https://img.game8.co/3896539/13d127fad255663ecebb4ab67e94854f.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3896539/13d127fad255663ecebb4ab67e94854f.png/show');
+    END;
+END;
+
+
+-- [1598771] Miasmic Branch x4 (Miasmic Branch)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Miasmic Branch x4', @CatId, 'Found on the north side of the Heart of Bloom Resonance Beacon. It is easy to spot by looking for the red tree stump flowing with electricity.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 91.05, 70.69);
+
+    IF 'https://img.game8.co/4634915/6a0dab826299efb960eb723e54894168.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4634915/6a0dab826299efb960eb723e54894168.png/show');
+    END;
+END;
+
+
+-- [1598772] Miasmic Branch x4 (Miasmic Branch)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Miasmic Branch x4', @CatId, 'Located on the north side of the Heart of Bloom Resonance Beacon and near a Jade Roostone.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 88.52, 69.12);
+
+    IF 'https://img.game8.co/4634915/6a0dab826299efb960eb723e54894168.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4634915/6a0dab826299efb960eb723e54894168.png/show');
+    END;
+END;
+
+
+-- [1598773] Miasmic Branch x4 (Miasmic Branch)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Miasmic Branch x4', @CatId, 'Found outside the Censure Lock Crisis arena, near the Heart of Stillness.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 104.03, 84.97);
+
+    IF 'https://img.game8.co/4634915/6a0dab826299efb960eb723e54894168.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4634915/6a0dab826299efb960eb723e54894168.png/show');
+    END;
+END;
+
+
+-- [1598774] Miasmic Branch x4 (Miasmic Branch)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Miasmic Branch x4', @CatId, 'Located outside the Censure Lock Crisis arena, inside a subterranean area near the Heart of Stillness.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 100.02, 82.88);
+
+    IF 'https://img.game8.co/4634915/6a0dab826299efb960eb723e54894168.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4634915/6a0dab826299efb960eb723e54894168.png/show');
+    END;
+END;
+
+
+-- [1598775] Miasmic Branch x4 (Miasmic Branch)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Miasmic Branch x4', @CatId, 'Found at the center of the Heartscale Labyrinth, across the road from the central structure.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 187.14, 53.35);
+
+    IF 'https://img.game8.co/4634915/6a0dab826299efb960eb723e54894168.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4634915/6a0dab826299efb960eb723e54894168.png/show');
+    END;
+END;
+
+
+-- [1598776] Miasmic Branch x4 (Miasmic Branch)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Miasmic Branch x4', @CatId, 'Located at the center of the Heartscale Labyrinth, across the road from the central structure, near another tree stump filled with Miasmic Branch.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 189.41, 55.7);
+
+    IF 'https://img.game8.co/4634915/6a0dab826299efb960eb723e54894168.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4634915/6a0dab826299efb960eb723e54894168.png/show');
+    END;
+END;
+
+
+-- [1598777] Miasmic Branch x4 (Miasmic Branch)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Miasmic Branch x4', @CatId, 'Found at the start of the Heartscale Labyrinth, just across the main road near some white flowers.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 194.81, 54.57);
+
+    IF 'https://img.game8.co/4634915/6a0dab826299efb960eb723e54894168.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4634915/6a0dab826299efb960eb723e54894168.png/show');
+    END;
+END;
+
+
+-- [1598778] Miasmic Branch x4 (Miasmic Branch)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Miasmic Branch x4', @CatId, 'Located at the start of the Heartscale Labyrinth on the central island near some white flowers.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 198.81, 54.31);
+
+    IF 'https://img.game8.co/4634915/6a0dab826299efb960eb723e54894168.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4634915/6a0dab826299efb960eb723e54894168.png/show');
+    END;
+END;
+
+
+-- [1598779] Miasmic Branch x8 (Miasmic Branch)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Miasmic Branch x8', @CatId, 'Found at the start of the Heartscale Labyrinth, on the east side of the central island.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 203.27, 60.49);
+
+    IF 'https://img.game8.co/4634915/6a0dab826299efb960eb723e54894168.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4634915/6a0dab826299efb960eb723e54894168.png/show');
+    END;
+END;
+
+
+-- [1598780] Miasmic Branch x4 (Miasmic Branch)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Miasmic Branch x4', @CatId, 'Found at the start of the Heartscale Labyrinth, ahead of the Resonance Beacon.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 210.93, 49.52);
+
+    IF 'https://img.game8.co/4634915/6a0dab826299efb960eb723e54894168.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4634915/6a0dab826299efb960eb723e54894168.png/show');
+    END;
+END;
+
+
+-- [1598781] Miasmic Branch x4 (Miasmic Branch)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Miasmic Branch x4', @CatId, 'Found at the start of the Heartscale Labyrinth, near a body of water around the Resonance Beacon.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 206.83, 47.86);
+
+    IF 'https://img.game8.co/4634915/6a0dab826299efb960eb723e54894168.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4634915/6a0dab826299efb960eb723e54894168.png/show');
+    END;
+END;
+
+
+-- [1598826] Resonance Beacon (Resonance Beacon)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Resonance Beacon', @CatId, '');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 131.31, 124.01);
+
+    IF 'https://img.game8.co/3893022/21de8118ea07128695abc5fad7ee9710.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3893022/21de8118ea07128695abc5fad7ee9710.png/show');
+    END;
+END;
+
+
+-- [1598827] Resonance Beacon (Resonance Beacon)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Resonance Beacon', @CatId, '');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 141.09, 193.69);
+
+    IF 'https://img.game8.co/3893022/21de8118ea07128695abc5fad7ee9710.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3893022/21de8118ea07128695abc5fad7ee9710.png/show');
+    END;
+END;
+
+
+-- [1598828] Resonance Beacon (Resonance Beacon)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Resonance Beacon', @CatId, '');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 74.46, 183.65);
+
+    IF 'https://img.game8.co/3893022/21de8118ea07128695abc5fad7ee9710.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3893022/21de8118ea07128695abc5fad7ee9710.png/show');
+    END;
+END;
+
+
+-- [1598829] Resonance Beacon (Resonance Beacon)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Resonance Beacon', @CatId, '');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 88.33, 107.49);
+
+    IF 'https://img.game8.co/3893022/21de8118ea07128695abc5fad7ee9710.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3893022/21de8118ea07128695abc5fad7ee9710.png/show');
+    END;
+END;
+
+
+-- [1598830] Resonance Beacon (Resonance Beacon)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Resonance Beacon', @CatId, '');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 194.36, 106.15);
+
+    IF 'https://img.game8.co/3893022/21de8118ea07128695abc5fad7ee9710.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3893022/21de8118ea07128695abc5fad7ee9710.png/show');
+    END;
+END;
+
+
+-- [1598831] Resonance Beacon (Resonance Beacon)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Resonance Beacon', @CatId, '');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 208.84, 45.58);
+
+    IF 'https://img.game8.co/3893022/21de8118ea07128695abc5fad7ee9710.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3893022/21de8118ea07128695abc5fad7ee9710.png/show');
+    END;
+END;
+
+
+-- [1598832] Resonance Nexus (Resonance Nexus)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Resonance Nexus', @CatId, '');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 153.55, 77.68);
+
+    IF 'https://img.game8.co/3893156/addabd17826c2a4964cf5ec1b081a34c.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3893156/addabd17826c2a4964cf5ec1b081a34c.png/show');
+    END;
+END;
+
+
+-- [1598833] Resonance Beacon (Resonance Beacon)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Resonance Beacon', @CatId, '');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 126.37, 68.18);
+
+    IF 'https://img.game8.co/3893022/21de8118ea07128695abc5fad7ee9710.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3893022/21de8118ea07128695abc5fad7ee9710.png/show');
+    END;
+END;
+
+
+-- [1598834] Resonance Beacon (Resonance Beacon)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Resonance Beacon', @CatId, '');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 77.37, 69.3);
+
+    IF 'https://img.game8.co/3893022/21de8118ea07128695abc5fad7ee9710.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3893022/21de8118ea07128695abc5fad7ee9710.png/show');
+    END;
+END;
+
+
+-- [1598835] Resonance Beacon (Resonance Beacon)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Resonance Beacon', @CatId, '');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 68.04, 93.86);
+
+    IF 'https://img.game8.co/3893022/21de8118ea07128695abc5fad7ee9710.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3893022/21de8118ea07128695abc5fad7ee9710.png/show');
+    END;
+END;
+
+
+-- [1599149] Dream Fox Statue (Dream Fox Statue)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Dream Fox Statue', @CatId, 'Found on a ridge, surrounded by broken circular structures.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 183.69, 103.12);
+
+    IF 'https://img.game8.co/4635310/50e515b9dcc45853634165e457baf9e8.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4635310/50e515b9dcc45853634165e457baf9e8.png/show');
+    END;
+END;
+
+
+-- [1599150] Dream Fox Statue (Dream Fox Statue)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Dream Fox Statue', @CatId, 'Found on a platform in the water.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 183.61, 112.96);
+
+    IF 'https://img.game8.co/4635310/50e515b9dcc45853634165e457baf9e8.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4635310/50e515b9dcc45853634165e457baf9e8.png/show');
+    END;
+END;
+
+
+-- [1599151] Dream Fox Statue (Dream Fox Statue)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Dream Fox Statue', @CatId, 'Found beside a cliff, near the path leading to a bridge.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 170.47, 115.6);
+
+    IF 'https://img.game8.co/4635310/50e515b9dcc45853634165e457baf9e8.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4635310/50e515b9dcc45853634165e457baf9e8.png/show');
+    END;
+END;
+
+
+-- [1599152] Dream Fox Statue (Dream Fox Statue)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Dream Fox Statue', @CatId, 'Found at the cliffside, beside the path between the two bridges.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 192.71, 132.95);
+
+    IF 'https://img.game8.co/4635310/50e515b9dcc45853634165e457baf9e8.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4635310/50e515b9dcc45853634165e457baf9e8.png/show');
+    END;
+END;
+
+
+-- [1599412] Supply Chest (Supply Chest)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Supply Chest', @CatId, 'Found within the Dream Fox Statue Puzzle, on the side platform behind the crates and vases.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 181.38, 103.04);
+
+    IF 'https://img.game8.co/3894791/8a0a8b26e5e90f55ae32a3f759112a4f.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3894791/8a0a8b26e5e90f55ae32a3f759112a4f.png/show');
+    END;
+END;
+
+
+-- [1599413] Supply Chest (Supply Chest)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Supply Chest', @CatId, 'Found in the Dream Fox Statue Puzzle, inside the inner threshold, behind an enemy.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 182.25, 104.69);
+
+    IF 'https://img.game8.co/3894792/b145f33baa32312ad31b93fba5b159b3.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3894792/b145f33baa32312ad31b93fba5b159b3.png/show');
+    END;
+END;
+
+
+-- [1599414] Supply Chest (Supply Chest)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Supply Chest', @CatId, 'Found within the Dream Fox Statue Puzzle, on the second floor, beside a green console.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 183.82, 104.62);
+
+    IF 'https://img.game8.co/3894792/b145f33baa32312ad31b93fba5b159b3.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3894792/b145f33baa32312ad31b93fba5b159b3.png/show');
+    END;
+END;
+
+
+-- [1599415] Supply Chest (Supply Chest)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Supply Chest', @CatId, 'Found within the Dream Fox Statue Puzzle, inside the second inner threshold near the exit point at the other end.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 184.86, 103.27);
+
+    IF 'https://img.game8.co/3894791/8a0a8b26e5e90f55ae32a3f759112a4f.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3894791/8a0a8b26e5e90f55ae32a3f759112a4f.png/show');
+    END;
+END;
+
+
+-- [1599416] Supply Chest (Supply Chest)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Supply Chest', @CatId, 'Found after completing the Dream Fox Statue Puzzle.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 184.3, 102.0);
+
+    IF 'https://img.game8.co/3894794/4f077e716f334f517ae2101827763281.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3894794/4f077e716f334f517ae2101827763281.png/show');
+    END;
+END;
+
+
+-- [1599417] Supply Chest (Supply Chest)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Supply Chest', @CatId, 'Found in the Dream Fox Statue Puzzle, in the lower inner threshold after going through a set of stairs, behind some breakable objects.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 182.29, 112.85);
+
+    IF 'https://img.game8.co/3894791/8a0a8b26e5e90f55ae32a3f759112a4f.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3894791/8a0a8b26e5e90f55ae32a3f759112a4f.png/show');
+    END;
+END;
+
+
+-- [1599418] Supply Chest (Supply Chest)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Supply Chest', @CatId, 'Found in the Dream Fox Statue Puzzle, inside the lower inner threshold near a Flamejaw Chi.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 183.56, 114.42);
+
+    IF 'https://img.game8.co/3894792/b145f33baa32312ad31b93fba5b159b3.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3894792/b145f33baa32312ad31b93fba5b159b3.png/show');
+    END;
+END;
+
+
+-- [1599419] Supply Chest (Supply Chest)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Supply Chest', @CatId, 'Found in the Dream Fox Statue Puzzle, inside the lower inner threshold, and high up on a landing between a set of stairs. You need to repeatedly turn on the lamp, exit, and enter the threshold while heading up.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 184.82, 113.33);
+
+    IF 'https://img.game8.co/3894791/8a0a8b26e5e90f55ae32a3f759112a4f.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3894791/8a0a8b26e5e90f55ae32a3f759112a4f.png/show');
+    END;
+END;
+
+
+-- [1599420] Supply Chest (Supply Chest)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Supply Chest', @CatId, 'Found in the Dream Fox Statue Puzzle, inside the lower inner threshold and the highest floor. You need to repeatedly turn on the lamp, exit, and enter the threshold while heading up.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 184.52, 112.28);
+
+    IF 'https://img.game8.co/3894792/b145f33baa32312ad31b93fba5b159b3.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3894792/b145f33baa32312ad31b93fba5b159b3.png/show');
+    END;
+END;
+
+
+-- [1599421] Supply Chest (Supply Chest)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Supply Chest', @CatId, 'Found after completing the Dream Fox Statue Puzzle.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 182.99, 111.46);
+
+    IF 'https://img.game8.co/3894794/4f077e716f334f517ae2101827763281.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3894794/4f077e716f334f517ae2101827763281.png/show');
+    END;
+END;
+
+
+-- [1599422] Supply Chest (Supply Chest)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Supply Chest', @CatId, 'Found inside the Dream Fox Statue Puzzle, on the other side after riding the moving platform.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 170.72, 116.94);
+
+    IF 'https://img.game8.co/3894791/8a0a8b26e5e90f55ae32a3f759112a4f.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3894791/8a0a8b26e5e90f55ae32a3f759112a4f.png/show');
+    END;
+END;
+
+
+-- [1599423] Supply Chest (Supply Chest)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Supply Chest', @CatId, 'Found inside the Dream Fox Statue Puzzle, beside a railing on a platform guarded by an Autopuppet enemy.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 169.42, 116.36);
+
+    IF 'https://img.game8.co/3894792/b145f33baa32312ad31b93fba5b159b3.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3894792/b145f33baa32312ad31b93fba5b159b3.png/show');
+    END;
+END;
+
+
+-- [1599424] Supply Chest (Supply Chest)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Supply Chest', @CatId, 'Found inside the Dream Fox Statue Puzzle, after crossing the moving platform for a second time it should be beside the Flamejaw Chi.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 169.38, 114.7);
+
+    IF 'https://img.game8.co/3894791/8a0a8b26e5e90f55ae32a3f759112a4f.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3894791/8a0a8b26e5e90f55ae32a3f759112a4f.png/show');
+    END;
+END;
+
+
+-- [1599425] Supply Chest (Supply Chest)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Supply Chest', @CatId, 'Found inside the Dream Fox Statue Puzzle, near the Flaemjaw Chi at the highest level.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 170.53, 114.23);
+
+    IF 'https://img.game8.co/3894792/b145f33baa32312ad31b93fba5b159b3.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3894792/b145f33baa32312ad31b93fba5b159b3.png/show');
+    END;
+END;
+
+
+-- [1599426] Supply Chest (Supply Chest)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Supply Chest', @CatId, 'Found after completing the Dream Fox Statue Puzzle.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 171.55, 115.12);
+
+    IF 'https://img.game8.co/3894794/4f077e716f334f517ae2101827763281.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3894794/4f077e716f334f517ae2101827763281.png/show');
+    END;
+END;
+
+
+-- [1599427] Supply Chest (Supply Chest)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Supply Chest', @CatId, 'Found inside the Dream Fox Statue Puzzle, in a corner with some crates.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 191.14, 132.87);
+
+    IF 'https://img.game8.co/3894791/8a0a8b26e5e90f55ae32a3f759112a4f.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3894791/8a0a8b26e5e90f55ae32a3f759112a4f.png/show');
+    END;
+END;
+
+
+-- [1599428] Supply Chest (Supply Chest)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Supply Chest', @CatId, 'Found inside the Dream Fox Statue Puzzle, in the back area beside another locked chest.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 191.99, 134.58);
+
+    IF 'https://img.game8.co/3894791/8a0a8b26e5e90f55ae32a3f759112a4f.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3894791/8a0a8b26e5e90f55ae32a3f759112a4f.png/show');
+    END;
+END;
+
+
+-- [1599429] Supply Chest (Supply Chest)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Supply Chest', @CatId, 'Found inside the Dream Fox Statue Puzzle, in the back area underneath a set of stairs.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 193.65, 134.37);
+
+    IF 'https://img.game8.co/3894792/b145f33baa32312ad31b93fba5b159b3.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3894792/b145f33baa32312ad31b93fba5b159b3.png/show');
+    END;
+END;
+
+
+-- [1599430] Supply Chest (Supply Chest)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Supply Chest', @CatId, 'Found inside the Dream Fox Statue Puzzle. You need to light up four nearby lamps in four different corner areas to get this chest.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 193.79, 132.79);
+
+    IF 'https://img.game8.co/3894792/b145f33baa32312ad31b93fba5b159b3.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3894792/b145f33baa32312ad31b93fba5b159b3.png/show');
+    END;
+END;
+
+
+-- [1599431] Supply Chest (Supply Chest)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Supply Chest', @CatId, 'Found after completing the Dream Fox Statue Puzzle.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 192.47, 131.64);
+
+    IF 'https://img.game8.co/3894794/4f077e716f334f517ae2101827763281.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3894794/4f077e716f334f517ae2101827763281.png/show');
+    END;
+END;
+
+
+-- [1599531] Seat of Serenity (Seat of Serenity)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Seat of Serenity', @CatId, 'Found in front of a small building in the Heart of Frost.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 97.81, 164.27);
+
+    IF 'https://img.game8.co/4557535/48284b0cc60e1692b28e3e6ddd74c43c.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4557535/48284b0cc60e1692b28e3e6ddd74c43c.png/show');
+    END;
+END;
+
+
+-- [1599532] Seat of Serenity (Seat of Serenity)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Seat of Serenity', @CatId, 'Found on a cliff that is overlooking the Heart of Stillness.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 137.09, 69.49);
+
+    IF 'https://img.game8.co/4557535/48284b0cc60e1692b28e3e6ddd74c43c.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4557535/48284b0cc60e1692b28e3e6ddd74c43c.png/show');
+    END;
+END;
+
+
+-- [1599533] Seat of Serenity (Seat of Serenity)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Seat of Serenity', @CatId, 'Found in the middle of the bridge above the waterfall in the Heart of Flames.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 194.94, 114.59);
+
+    IF 'https://img.game8.co/4557535/48284b0cc60e1692b28e3e6ddd74c43c.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4557535/48284b0cc60e1692b28e3e6ddd74c43c.png/show');
+    END;
+END;
+
+
+-- [1599534] Seat of Serenity (Seat of Serenity)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Seat of Serenity', @CatId, 'Found by the cliffside pagoda in Mengxuan Vale.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 149.76, 148.56);
+
+    IF 'https://img.game8.co/4557535/48284b0cc60e1692b28e3e6ddd74c43c.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4557535/48284b0cc60e1692b28e3e6ddd74c43c.png/show');
+    END;
+END;
+
+
+-- [1599535] Seat of Serenity (Seat of Serenity)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Seat of Serenity', @CatId, 'Found at the highest mountain peak at the southwest side of Heart of Bloom.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 57.13, 58.57);
+
+    IF 'https://img.game8.co/4557535/48284b0cc60e1692b28e3e6ddd74c43c.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4557535/48284b0cc60e1692b28e3e6ddd74c43c.png/show');
+    END;
+END;
+
+
+-- [1599812] Controlled Anomaly Zone (Controlled Anomaly Zone)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Controlled Anomaly Zone', @CatId, 'Found on the west side of the map, near the Heart of Stillness.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 117.22, 59.61);
+
+    IF 'https://img.game8.co/4636452/8f6608fa732e4e5baf5b22de4c643e72.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4636452/8f6608fa732e4e5baf5b22de4c643e72.png/show');
+    END;
+END;
+
+
+-- [1599813] Controlled Anomaly Zone (Controlled Anomaly Zone)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Controlled Anomaly Zone', @CatId, 'Found on the west side of the map, near the Heart of Stillness.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 110.03, 59.61);
+
+    IF 'https://img.game8.co/4636452/8f6608fa732e4e5baf5b22de4c643e72.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4636452/8f6608fa732e4e5baf5b22de4c643e72.png/show');
+    END;
+END;
+
+
+-- [1599814] Controlled Anomaly Zone (Controlled Anomaly Zone)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Controlled Anomaly Zone', @CatId, 'Found on the south side of the Resonance Nexus, which is on the northwest side of the Heart of Stillness.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 145.36, 76.63);
+
+    IF 'https://img.game8.co/4636452/8f6608fa732e4e5baf5b22de4c643e72.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4636452/8f6608fa732e4e5baf5b22de4c643e72.png/show');
+    END;
+END;
+
+
+-- [1599815] Controlled Anomaly Zone (Controlled Anomaly Zone)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Controlled Anomaly Zone', @CatId, 'Found on the east side of Repair Workshop and near the Thousandbloom Grotto.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 94.46, 90.34);
+
+    IF 'https://img.game8.co/4636452/8f6608fa732e4e5baf5b22de4c643e72.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4636452/8f6608fa732e4e5baf5b22de4c643e72.png/show');
+    END;
+END;
+
+
+-- [1599816] Controlled Anomaly Zone (Controlled Anomaly Zone)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Controlled Anomaly Zone', @CatId, 'Found on the north side of Cascade Hollow, near the left edge of the map.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 94.83, 49.11);
+
+    IF 'https://img.game8.co/4636452/8f6608fa732e4e5baf5b22de4c643e72.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4636452/8f6608fa732e4e5baf5b22de4c643e72.png/show');
+    END;
+END;
+
+
+-- [1599817] Controlled Anomaly Zone (Controlled Anomaly Zone)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Controlled Anomaly Zone', @CatId, 'Found on the north side of Cascade Hollow, near the Heart of Bloom.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 91.17, 54.2);
+
+    IF 'https://img.game8.co/4636452/8f6608fa732e4e5baf5b22de4c643e72.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4636452/8f6608fa732e4e5baf5b22de4c643e72.png/show');
+    END;
+END;
+
+
+-- [1599818] Controlled Anomaly Zone (Controlled Anomaly Zone)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Controlled Anomaly Zone', @CatId, 'Found inside the Stillfrost Crossing.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 27.75, 118.44);
+
+    IF 'https://img.game8.co/4636452/8f6608fa732e4e5baf5b22de4c643e72.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4636452/8f6608fa732e4e5baf5b22de4c643e72.png/show');
+    END;
+END;
+
+
+-- [1599819] Controlled Anomaly Zone (Controlled Anomaly Zone)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Controlled Anomaly Zone', @CatId, 'Found near the bridge of the Heart of Frost.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 92.92, 167.29);
+
+    IF 'https://img.game8.co/4636452/8f6608fa732e4e5baf5b22de4c643e72.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4636452/8f6608fa732e4e5baf5b22de4c643e72.png/show');
+    END;
+END;
+
+
+-- [1599820] Controlled Anomaly Zone (Controlled Anomaly Zone)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Controlled Anomaly Zone', @CatId, 'Found in the Heart of Frost, near the Treasure of Perilous Enclave Challenge.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 121.36, 193.87);
+
+    IF 'https://img.game8.co/4636452/8f6608fa732e4e5baf5b22de4c643e72.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4636452/8f6608fa732e4e5baf5b22de4c643e72.png/show');
+    END;
+END;
+
+
+-- [1599821] Controlled Anomaly Zone (Controlled Anomaly Zone)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Controlled Anomaly Zone', @CatId, 'Found on the south side of the Resonance Beacon in the Heart of Frost.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 128.5, 201.01);
+
+    IF 'https://img.game8.co/4636452/8f6608fa732e4e5baf5b22de4c643e72.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4636452/8f6608fa732e4e5baf5b22de4c643e72.png/show');
+    END;
+END;
+
+
+-- [1599822] Controlled Anomaly Zone (Controlled Anomaly Zone)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Controlled Anomaly Zone', @CatId, 'Found on the west side of the Resonance Beacon in the Heart of Frost.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 137.13, 182.14);
+
+    IF 'https://img.game8.co/4636452/8f6608fa732e4e5baf5b22de4c643e72.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4636452/8f6608fa732e4e5baf5b22de4c643e72.png/show');
+    END;
+END;
+
+
+-- [1599823] Controlled Anomaly Zone (Controlled Anomaly Zone)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Controlled Anomaly Zone', @CatId, 'Found on the east side of the map, near the Rime Grotto.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 126.07, 165.81);
+
+    IF 'https://img.game8.co/4636452/8f6608fa732e4e5baf5b22de4c643e72.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4636452/8f6608fa732e4e5baf5b22de4c643e72.png/show');
+    END;
+END;
+
+
+-- [1599824] Controlled Anomaly Zone (Controlled Anomaly Zone)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Controlled Anomaly Zone', @CatId, 'Found on the south side of the Simulacrum Nexus nest in the Heart of Flames.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 173.6, 122.51);
+
+    IF 'https://img.game8.co/4636452/8f6608fa732e4e5baf5b22de4c643e72.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4636452/8f6608fa732e4e5baf5b22de4c643e72.png/show');
+    END;
+END;
+
+
+-- [1599825] Controlled Anomaly Zone (Controlled Anomaly Zone)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Controlled Anomaly Zone', @CatId, 'Found on the northwest side of the Heart of Flames Resonance Beacon.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 202.95, 94.41);
+
+    IF 'https://img.game8.co/4636452/8f6608fa732e4e5baf5b22de4c643e72.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4636452/8f6608fa732e4e5baf5b22de4c643e72.png/show');
+    END;
+END;
+
+
+-- [1599826] Controlled Anomaly Zone (Controlled Anomaly Zone)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Controlled Anomaly Zone', @CatId, 'Found inside the Thousandbloom Grotto.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 117.92, 18.22);
+
+    IF 'https://img.game8.co/4636452/8f6608fa732e4e5baf5b22de4c643e72.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4636452/8f6608fa732e4e5baf5b22de4c643e72.png/show');
+    END;
+END;
+
+
+-- [1599836] Censure Lock Crisis (Censure Lock Crisis)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Censure Lock Crisis', @CatId, 'Skywatch Lancer: Unit-01 is found in the southwestern Heart of Bloom area, inside a cave called Cascade Hollow');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 80.99, 18.58);
+
+    IF 'https://img.game8.co/4589973/f99dd4f2d7dc4d6e2d6c7247472f013c.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4589973/f99dd4f2d7dc4d6e2d6c7247472f013c.png/show');
+    END;
+END;
+
+
+-- [1599837] Censure Lock Crisis (Censure Lock Crisis)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Censure Lock Crisis', @CatId, 'Rimewind Soulfrayer is found in a cave behind the large waterfall in Heart of Frost, and requires the completion of the Tales from the Capsule: Ashen Fox quest');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 110.1, 232.09);
+
+    IF 'https://img.game8.co/4589973/f99dd4f2d7dc4d6e2d6c7247472f013c.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4589973/f99dd4f2d7dc4d6e2d6c7247472f013c.png/show');
+    END;
+END;
+
+
+-- [1599838] Censure Lock Crisis (Censure Lock Crisis)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Censure Lock Crisis', @CatId, 'Myriadform Bloomburst is found in the Heart of Stillness, in the canyon northwest of the Repair Works');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 102.86, 86.16);
+
+    IF 'https://img.game8.co/4589973/f99dd4f2d7dc4d6e2d6c7247472f013c.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4589973/f99dd4f2d7dc4d6e2d6c7247472f013c.png/show');
+    END;
+END;
+
+
+-- [1599839] Censure Lock Crisis (Censure Lock Crisis)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Censure Lock Crisis', @CatId, 'Abysswatch Formrender is found in Heart of Flames, behind a waterfall south of the Tacet Field in the area');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 233.48, 127.16);
+
+    IF 'https://img.game8.co/4589973/f99dd4f2d7dc4d6e2d6c7247472f013c.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4589973/f99dd4f2d7dc4d6e2d6c7247472f013c.png/show');
+    END;
+END;
+
+
+-- [1599840] Dream Jade Rootstone (Dream Jade Rootstone)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Dream Jade Rootstone', @CatId, 'Found on the northwest side of the Heart of Bloom Resonance Beacon.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 87.8, 67.2);
+
+    IF 'https://img.game8.co/4636597/7b9c00782e795ca90eeaab778d31a882.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4636597/7b9c00782e795ca90eeaab778d31a882.png/show');
+    END;
+END;
+
+
+-- [1599841] Dream Kernel Puppet (Dream Kernel Puppet)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Dream Kernel Puppet', @CatId, 'Found on the east side of the Mengxuan Vale and the north side of Heart of Frost.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 135.67, 164.54);
+
+    IF 'https://img.game8.co/4636596/f0078c504f017aa9429f407dd01dfb20.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4636596/f0078c504f017aa9429f407dd01dfb20.png/show');
+    END;
+END;
+
+
+-- [1599842] Dream Kernel Puppet (Dream Kernel Puppet)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Dream Kernel Puppet', @CatId, 'Found on the east side of Mengxuan Vale and northeast of Heart of Frost, near the upper Resonance Beacon.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 130.48, 189.95);
+
+    IF 'https://img.game8.co/4636596/f0078c504f017aa9429f407dd01dfb20.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4636596/f0078c504f017aa9429f407dd01dfb20.png/show');
+    END;
+END;
+
+
+-- [1599843] Dream Kernel Puppet (Dream Kernel Puppet)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Dream Kernel Puppet', @CatId, 'Found on the southeast side of the Repair Workshop and the southwest side of Heart of Frost, near the lower Resonance Beacon.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 79.28, 150.92);
+
+    IF 'https://img.game8.co/4636596/f0078c504f017aa9429f407dd01dfb20.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4636596/f0078c504f017aa9429f407dd01dfb20.png/show');
+    END;
+END;
+
+
+-- [1599844] Dream Kernel Puppet (Dream Kernel Puppet)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Dream Kernel Puppet', @CatId, 'Found on the northwest side of Heart of Frost, near the bridge.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 98.63, 160.87);
+
+    IF 'https://img.game8.co/4636596/f0078c504f017aa9429f407dd01dfb20.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4636596/f0078c504f017aa9429f407dd01dfb20.png/show');
+    END;
+END;
+
+
+-- [1600898] Dream Kernel Puppet (Dream Kernel Puppet)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Dream Kernel Puppet', @CatId, 'Found on the east side of Mengxuan Vale and northeast of Heart of Frost, near the upper Resonance Beacon.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 119.75, 177.53);
+
+    IF 'https://img.game8.co/4636596/f0078c504f017aa9429f407dd01dfb20.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4636596/f0078c504f017aa9429f407dd01dfb20.png/show');
+    END;
+END;
+
+
+-- [1601076] Composite Anomaly Zone (Composite Anomaly Zone)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Composite Anomaly Zone', @CatId, 'Found northeast of Mengxuan Vale near the edge of a waterfall.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 146.86, 145.33);
+
+    IF 'https://img.game8.co/4637912/ae4e9bc3d1cdf8ffd6dc6b4ad056a926.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4637912/ae4e9bc3d1cdf8ffd6dc6b4ad056a926.png/show');
+    END;
+END;
+
+
+-- [1601077] Composite Anomaly Zone (Composite Anomaly Zone)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Composite Anomaly Zone', @CatId, 'Situated by the lake in the Heart of Flames. You can find it at the top of the waterfall.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 181.84, 91.45);
+
+    IF 'https://img.game8.co/4637912/ae4e9bc3d1cdf8ffd6dc6b4ad056a926.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4637912/ae4e9bc3d1cdf8ffd6dc6b4ad056a926.png/show');
+    END;
+END;
+
+
+-- [1601078] Composite Anomaly Zone (Composite Anomaly Zone)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Composite Anomaly Zone', @CatId, 'Located at the plaza of the Heart of Stillness in the Simulacrum Nexus. Search for the burning carriage to initiate the challenge.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 123.04, 73.94);
+
+    IF 'https://img.game8.co/4637912/ae4e9bc3d1cdf8ffd6dc6b4ad056a926.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4637912/ae4e9bc3d1cdf8ffd6dc6b4ad056a926.png/show');
+    END;
+END;
+
+
+-- [1601079] Composite Anomaly Zone (Composite Anomaly Zone)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Composite Anomaly Zone', @CatId, 'Found in the east side of Heart of Bloom, situated above the Wandering Heart Ruins.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 68.58, 87.66);
+
+    IF 'https://img.game8.co/4637912/ae4e9bc3d1cdf8ffd6dc6b4ad056a926.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4637912/ae4e9bc3d1cdf8ffd6dc6b4ad056a926.png/show');
+    END;
+END;
+
+
+-- [1601080] Composite Anomaly Zone (Composite Anomaly Zone)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Composite Anomaly Zone', @CatId, 'Found in the underground area, Stillfrost Crossing.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 30.77, 120.72);
+
+    IF 'https://img.game8.co/4637912/ae4e9bc3d1cdf8ffd6dc6b4ad056a926.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4637912/ae4e9bc3d1cdf8ffd6dc6b4ad056a926.png/show');
+    END;
+END;
+
+
+-- [1601084] Dream Jade Rootstone (Dream Jade Rootstone)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Dream Jade Rootstone', @CatId, 'Found on the south side of the map, near the Heart of Stillness and the Thousandbloom Grotto');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 105.77, 77.61);
+
+    IF 'https://img.game8.co/4636597/7b9c00782e795ca90eeaab778d31a882.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/4636597/7b9c00782e795ca90eeaab778d31a882.png/show');
+    END;
+END;
+
+
+-- [1601099] Supply Chest (Supply Chest)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Supply Chest', @CatId, 'Found after completing the Dream Jade Rootstone near the Thousandbloom Grotto.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 104.8, 77.42);
+
+    IF 'https://img.game8.co/3894794/4f077e716f334f517ae2101827763281.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3894794/4f077e716f334f517ae2101827763281.png/show');
+    END;
+END;
+
+
+-- [1601100] Supply Chest (Supply Chest)
+BEGIN
+    SELECT @CatId = CatId FROM @CatMap WHERE NombreCat = 'General';
+    
+    INSERT INTO PuntosInteres (nombre, categoryId, descripcion) 
+    VALUES ('Supply Chest', @CatId, 'Found after completing the Dream Jade Rootstone Heart of Bloom found south of the map near Heart of Bloom.');
+    
+    SET @puntoId = SCOPE_IDENTITY();
+
+    INSERT INTO Coordenadas (puntoId, x, y) 
+    VALUES (@puntoId, 87.91, 66.2);
+
+    IF 'https://img.game8.co/3894794/4f077e716f334f517ae2101827763281.png/show' <> ''
+    BEGIN
+        INSERT INTO Icons (puntoId, imgUrl) VALUES (@puntoId, 'https://img.game8.co/3894794/4f077e716f334f517ae2101827763281.png/show');
+    END;
+END;
