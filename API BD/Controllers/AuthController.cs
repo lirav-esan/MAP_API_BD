@@ -51,10 +51,41 @@ namespace API_BD.Controllers
             });
         }
 
+        private async Task<bool> VerifyHejercioCaptchaAsync(string token)
+        {
+            if (string.IsNullOrEmpty(token)) return false;
+
+            var secretKey = _configuration["HcaptchaSettings:SecretKey"];
+            using var client = new HttpClient();
+
+            var parameters = new Dictionary<string, string>
+            {
+                { "secret", secretKey },
+                { "response", token }
+            };
+
+            var encodedContent = new FormUrlEncodedContent(parameters);
+            var response = await client.PostAsync("https://api.hcaptcha.com/siteverify", encodedContent);
+
+            if (!response.IsSuccessStatusCode) return false;
+
+            var jsonString = await response.Content.ReadAsStringAsync();
+
+            // Verificamos si la respuesta contiene "success":true
+            return jsonString.Contains("\"success\":true");
+        }
+
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] LoginDto dto)
         {
             var usuario = await _usuarioRepository.ObtenerPorEmailAsync(dto.Email);
+
+            bool isCaptchaValid = await VerifyHejercioCaptchaAsync(dto.CaptchaToken);
+            if (!isCaptchaValid)
+            {
+                return BadRequest(new { message = "Validación de hCaptcha fallida o expirada." });
+            }
+
             if (usuario == null || string.IsNullOrEmpty(usuario.PassHash)) 
                 return Unauthorized("Credenciales inválidas.");
 
