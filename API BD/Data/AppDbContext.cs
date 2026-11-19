@@ -23,7 +23,7 @@ namespace API_BD.Data
 
             modelBuilder.Entity<Usuario>(entity =>
             {
-                entity.ToTable("Usuario");
+                entity.ToTable("usuario");
                 entity.HasKey(e => e.Id);
                 entity.Property(e => e.Id).HasColumnName("id");
                 entity.Property(e => e.Username).HasColumnName("username");
@@ -34,7 +34,7 @@ namespace API_BD.Data
 
             modelBuilder.Entity<JuegoEntity>(entity =>
             {
-                entity.ToTable("Juegos");
+                entity.ToTable("juegos");
                 entity.HasKey(e => e.Id);
                 entity.Property(e => e.Id).HasColumnName("id");
                 entity.Property(e => e.Juego).HasColumnName("juego").HasMaxLength(100).IsRequired();
@@ -42,39 +42,39 @@ namespace API_BD.Data
 
             modelBuilder.Entity<CategoriaEntity>(entity =>
             {
-                entity.ToTable("Categorias");
+                entity.ToTable("categorias");
                 entity.HasKey(e => e.Id);
                 entity.Property(e => e.Id).HasColumnName("id");
                 entity.Property(e => e.Categoria).HasColumnName("categoria").HasMaxLength(100).IsRequired();
-                entity.Property(e => e.JuegoId).HasColumnName("juegoId");
+                entity.Property(e => e.JuegoId).HasColumnName("juego_id");
 
                 entity.HasOne(e => e.Juego)
                     .WithMany(j => j.Categorias)
                     .HasForeignKey(e => e.JuegoId)
-                    .OnDelete(DeleteBehavior.Restrict);
+                    .OnDelete(DeleteBehavior.Cascade);
             });
 
             modelBuilder.Entity<PuntoInteresEntity>(entity =>
             {
-                entity.ToTable("PuntosInteres");
+                entity.ToTable("puntos_interes");
                 entity.HasKey(e => e.Id);
                 entity.Property(e => e.Id).HasColumnName("id");
                 entity.Property(e => e.Nombre).HasColumnName("nombre").HasMaxLength(100);
-                entity.Property(e => e.CategoryId).HasColumnName("categoryId");
+                entity.Property(e => e.CategoryId).HasColumnName("category_id");
                 entity.Property(e => e.Descripcion).HasColumnName("descripcion").HasMaxLength(300);
 
                 entity.HasOne(e => e.Categoria)
                     .WithMany(c => c.PuntosInteres)
                     .HasForeignKey(e => e.CategoryId)
-                    .OnDelete(DeleteBehavior.Restrict);
+                    .OnDelete(DeleteBehavior.SetNull);
             });
 
             modelBuilder.Entity<CoordenadaEntity>(entity =>
             {
-                entity.ToTable("Coordenadas");
+                entity.ToTable("coordenadas");
                 entity.HasKey(e => e.Id);
                 entity.Property(e => e.Id).HasColumnName("id");
-                entity.Property(e => e.PuntoId).HasColumnName("puntoId");
+                entity.Property(e => e.PuntoId).HasColumnName("punto_id");
                 entity.Property(e => e.X).HasColumnName("x").HasPrecision(6, 3);
                 entity.Property(e => e.Y).HasColumnName("y").HasPrecision(6, 3);
 
@@ -86,10 +86,10 @@ namespace API_BD.Data
 
             modelBuilder.Entity<IconEntity>(entity =>
             {
-                entity.ToTable("Icons");
+                entity.ToTable("icons");
                 entity.HasKey(e => e.PuntoId);
-                entity.Property(e => e.PuntoId).HasColumnName("puntoId");
-                entity.Property(e => e.ImgUrl).HasColumnName("imgUrl").HasMaxLength(300);
+                entity.Property(e => e.PuntoId).HasColumnName("punto_id");
+                entity.Property(e => e.ImgUrl).HasColumnName("img_url").HasMaxLength(300);
 
                 entity.HasOne(e => e.PuntoInteres)
                     .WithOne(p => p.Icon)

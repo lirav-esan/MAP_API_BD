@@ -22,7 +22,7 @@ namespace API_BD.Repositories
         }
 
         // Busca un usuario por su ID primario
-        public async Task<Usuario?> ObtenerPorIdAsync(int id)
+        public async Task<Usuario?> ObtenerPorIdAsync(long id)
         {
             return await _context.Usuarios.FindAsync(id);
         }

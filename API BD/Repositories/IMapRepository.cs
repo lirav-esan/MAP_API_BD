@@ -6,7 +6,7 @@ namespace API_BD.Repositories
     {
         Task<IEnumerable<MapCategoryDto>> GetCategoriesAsync();
         Task<IEnumerable<PointOfInterest>> GetPointsAsync(string? category = null);
-        Task<PointOfInterest?> GetPointByIdAsync(int id);
+        Task<PointOfInterest?> GetPointByIdAsync(long id);
         Task<IEnumerable<MapIconDto>> GetIconsAsync();
         Task<IEnumerable<Coordinate>> GetCoordinatesByCategoryAsync(string category);
         Task<IEnumerable<MapMarkerDto>> GetMarkersAsync(string? juego = null, string? category = null);
