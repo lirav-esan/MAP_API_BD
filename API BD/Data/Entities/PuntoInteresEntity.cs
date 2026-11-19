@@ -2,9 +2,9 @@ namespace API_BD.Data.Entities
 {
     public class PuntoInteresEntity
     {
-        public int Id { get; set; }
+        public long Id { get; set; }
         public string? Nombre { get; set; }
-        public int? CategoryId { get; set; }
+        public long? CategoryId { get; set; }
         public string? Descripcion { get; set; }
 
         public CategoriaEntity? Categoria { get; set; }

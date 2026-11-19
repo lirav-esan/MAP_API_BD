@@ -43,8 +43,8 @@ public class MapController : ControllerBase
         return Ok(categories);
     }
 
-    [HttpGet("points/{id:int}")]
-    public async Task<ActionResult<PointOfInterest>> GetPointById(int id)
+    [HttpGet("points/{id:long}")]
+    public async Task<ActionResult<PointOfInterest>> GetPointById(long id)
     {
         var point = await _repo.GetPointByIdAsync(id);
         return point is null ? NotFound() : Ok(point);

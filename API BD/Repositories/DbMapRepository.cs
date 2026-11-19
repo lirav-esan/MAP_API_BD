@@ -36,7 +36,7 @@ namespace API_BD.Repositories
             return entities.Select(MapPoint).ToList();
         }
 
-        public async Task<PointOfInterest?> GetPointByIdAsync(int id)
+        public async Task<PointOfInterest?> GetPointByIdAsync(long id)
         {
             var entity = await _context.PuntosInteres
                 .AsNoTracking()
@@ -136,7 +136,7 @@ namespace API_BD.Repositories
 
             if (!string.IsNullOrWhiteSpace(category))
             {
-                if (int.TryParse(category, out var categoryId))
+                if (long.TryParse(category, out var categoryId))
                 {
                     query = query.Where(p => p.CategoryId == categoryId);
                 }
@@ -152,7 +152,7 @@ namespace API_BD.Repositories
                 return query;
             }
 
-            if (int.TryParse(juego, out var juegoId))
+            if (long.TryParse(juego, out var juegoId))
             {
                 return query.Where(p => p.Categoria != null && p.Categoria.JuegoId == juegoId);
             }
