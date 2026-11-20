@@ -28,12 +28,15 @@ builder.Services.AddOpenApi();
 // Repositorios.
 builder.Services.AddScoped<API_BD.Repositories.IMapRepository, API_BD.Repositories.DbMapRepository>();
 
-// El origen CORS del frontend map-front en GitHub Pages.
 // CORS valida el origen (esquema + host + puerto), no la ruta /map-front ni el fragmento #/login.
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowFrontend", policy =>
-        policy.WithOrigins("https://lirav-esan.github.io/map-front")
+        policy.WithOrigins(
+                "https://lirav-esan.github.io",
+                "http://localhost:5173",
+                "http://localhost:3000",
+                "http://localhost:5261")
             .AllowAnyHeader()
             .AllowAnyMethod());
 });
