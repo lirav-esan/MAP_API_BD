@@ -28,7 +28,8 @@ builder.Services.AddOpenApi();
 // Repositorios.
 builder.Services.AddScoped<API_BD.Repositories.IMapRepository, API_BD.Repositories.DbMapRepository>();
 
-// Permitir llamadas desde el frontend publicado en GitHub Pages.
+// El origen CORS del frontend map-front en GitHub Pages.
+// CORS valida el origen (esquema + host + puerto), no la ruta /map-front ni el fragmento #/login.
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowFrontend", policy =>
