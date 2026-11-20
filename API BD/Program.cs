@@ -28,10 +28,13 @@ builder.Services.AddOpenApi();
 // Repositorios.
 builder.Services.AddScoped<API_BD.Repositories.IMapRepository, API_BD.Repositories.DbMapRepository>();
 
-// Permitir llamadas desde el navegador (CORS) durante desarrollo.
+// Permitir llamadas desde el frontend publicado en GitHub Pages.
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowAll", policy => policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
+    options.AddPolicy("AllowFrontend", policy =>
+        policy.WithOrigins("https://lirav-esan.github.io")
+            .AllowAnyHeader()
+            .AllowAnyMethod());
 });
 
 var app = builder.Build();
@@ -43,7 +46,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-app.UseCors("AllowAll");
+app.UseCors("AllowFrontend");
 
 app.UseAuthorization();
 
