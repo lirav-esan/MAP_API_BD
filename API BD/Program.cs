@@ -33,7 +33,7 @@ builder.Services.AddScoped<API_BD.Repositories.IMapRepository, API_BD.Repositori
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowFrontend", policy =>
-        policy.WithOrigins("https://lirav-esan.github.io")
+        policy.WithOrigins("https://lirav-esan.github.io/map-front")
             .AllowAnyHeader()
             .AllowAnyMethod());
 });
